@@ -3,7 +3,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap'); */
 
 body {
@@ -75,6 +75,12 @@ h2 {
 p {
     font-size: 14pt;
     line-height: 1.7;
+    /* text-indent: 2em; */
+    /* letter-spacing: 0.05em */
+}
+
+.double > p {
+    text-indent: 2em;
 }
 
 p.small {
