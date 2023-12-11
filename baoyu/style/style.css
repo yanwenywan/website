@@ -103,8 +103,8 @@ p.right {
 
 p.subheading {
     text-align: center;
-    font-style: italic;
-    font-family: Manrope, 'Noto Serif SC';
+    /* font-style: italic; */
+    font-family: Manrope, 'Noto Serif SC', serif;
     /* letter-spacing: 0.2pt; */
 }
 
