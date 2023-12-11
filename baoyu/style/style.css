@@ -130,6 +130,13 @@ a:visited {
     color: var(--greener);
 }
 
+blockquote {
+    font-style: normal;
+    font-size: 14pt;
+    margin-left: 1em;
+    line-height: 1.7;
+    margin-right: 1em;
+}
 
 
 
