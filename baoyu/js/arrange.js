@@ -155,8 +155,9 @@ function main() {
 	// do links
 	let lp = document.createElement("p")
 	// lp.setAttribute("overflow", "none")
+	let backLink = null;
 	if (currentFileNumber > 1) {
-		let backLink = document.createElement("a")
+		backLink = document.createElement("a")
 		backLink.href = "./" + (currentFileNumber-1) + ".html"
 		backLink.innerText = lastChap
 		lp.appendChild(backLink)
@@ -173,6 +174,7 @@ function main() {
 	
 	
 	// Check if next page exists
+	let nextLink = null;
 	let nl = "./" + (currentFileNumber+1) + ".html"
 	let req = new XMLHttpRequest();
 	req.open("GET",nl);
@@ -180,7 +182,7 @@ function main() {
 		if(req.readyState === 4 && req.status === 200){
 			let rp = document.createElement("p")
 			rp.classList.add("right")
-			let nextLink = document.createElement("a")
+			nextLink = document.createElement("a")
 			nextLink.href = nl;
 			nextLink.innerText = nextChap
 			rp.appendChild(nextLink)
@@ -201,6 +203,15 @@ function main() {
 	if (show) {
 		footer.appendChild(p)
 	}
+
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "ArrowLeft" && backLink != null) {
+			window.location.href = backLink.href;
+		}
+		if (e.key === "ArrowRight" && nextLink != null) {
+			window.location.href = nextLink.href;
+		}
+	})
 	
 	// ================================================================================================================================
 	// thanks fear
