@@ -207,6 +207,7 @@ function main() {
 	document.addEventListener("keydown", (e) => {
 		if (e.key === "ArrowLeft" && backLink != null) {
 			window.location.href = backLink.href;
+			
 		}
 		if (e.key === "ArrowRight" && nextLink != null) {
 			window.location.href = nextLink.href;
