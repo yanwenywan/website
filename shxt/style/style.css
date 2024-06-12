@@ -18,7 +18,7 @@ html, body {
     color: #222222;
     font-family: var(--body-font);
     font-size: 14pt;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* MAIN */

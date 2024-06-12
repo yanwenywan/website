@@ -26,6 +26,7 @@
             justify-content: center;
             flex-wrap: wrap;
             column-gap: 1em;
+            row-gap: 2em;
         }
 
         div.ji > div {
@@ -42,6 +43,15 @@
         h2 {
             text-align: center;
         }
+
+        @media (max-width: 500px) {
+            div.cbox {
+                margin-left: auto;
+                padding: 1em;
+                width: 90%;
+            }
+        }
+        
     </style>
 
     <div class="cbox">
