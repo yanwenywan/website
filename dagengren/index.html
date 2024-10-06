@@ -401,7 +401,12 @@
 
     <p>
         <b>【 功 德 碑 】</b> <br>
-        Fear 貳拾 ❂ TendouKurou 肆 ❂ Laxarus 貳拾 ❂ Aj Vj 肆
+        <ul class="gongde">
+            <li>Fear 貳拾</li>
+            <li>TendouKurou 肆</li>
+            <li>Laxarus 貳拾</li>
+            <li>Aj Vj 肆</li>
+        </ul>
         <br><b>【 功 德 碑 】</b>
     </p>
 
@@ -437,6 +442,13 @@
         grid-template-columns: 1fr 1fr;
         column-gap: 30pt;
     }
+
+    ul.gongde {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 30pt;
+        list-style-type: "❂  ";
+    }   
 
     h2.c {
         text-align: center;
