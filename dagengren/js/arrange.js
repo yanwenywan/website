@@ -77,7 +77,11 @@ function makeFooter(currentFileNumber) {
 	addNextPageLinkIfExists(links, currentFileNumber)
 
 	footer.appendChild(links)
+
+	addUtterancesCommentThread(footer);
+
 	footer.appendChild(makeFooterSmallText())
+	
 	addNavLinkListener(backLink);
 }
 
@@ -139,6 +143,28 @@ function addNavLinkListener(backLink) {
 			window.location.href = nextLink.href;
 		}
 	})
+}
+
+function addUtterancesCommentThread(footer) {
+	let commentTitle = document.createElement("h3");
+	commentTitle.innerText = "Page Comments";
+	let commentFooter = document.createElement("p");
+	commentFooter.classList.add("small");
+	commentFooter.innerText = "Comments for this chapter. You will need a GitHub account. Please follow all terms and conditions of GitHub issues and maintain etiquette in the comments. Cookies are required for this functionality."
+
+	let utterances = document.createElement("script");
+	utterances.src = "https://utteranc.es/client.js";
+	utterances.setAttribute("repo", "yanwenywan/website");
+	utterances.setAttribute("issue-term", "pathname");
+	utterances.setAttribute("label", "comment thread");
+	utterances.setAttribute("theme","github-light");
+	utterances.crossOrigin = "anonymous"
+	utterances.async = true;
+
+	footer.appendChild(commentTitle);
+	footer.appendChild(commentFooter);
+	footer.appendChild(utterances);
+	
 }
 
 function makefootnotes() {
