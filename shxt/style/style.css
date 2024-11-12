@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Jersey+10&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 
 :root {
     --green: #3a6342;
     --greener: #348544;
     --yellowish: #f1f2e9;
     --darkyellowish: #d8d8c3;
-    --body-font: Lora, "Noto Serif TC", serif;
+    --body-font: Lora, "Cactus Classical Serif", serif;
     --title-font: Urbanist, "LXGW WenKai TC";
 }
 
@@ -17,7 +19,7 @@ html, body {
     background-color: #dddddd;
     color: #222222;
     font-family: var(--body-font);
-    font-size: 14pt;
+    font-size: 15pt;
     /* overflow: hidden; */
 }
 
