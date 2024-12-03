@@ -19,8 +19,15 @@ let sttt = document.createElement("h2")
 sttt.innerText = title
 item2.appendChild(sttt)
 
+function punctuate(paragraph) {
+    judoudPar = paragraph.replace(/([。，、；：「」])/g, '<span class="judou">$1</span>');
+
+    return judoudPar;
+}
+
 body.forEach(paragraph => {
     let am = document.createElement("p")
-    am.innerText = paragraph.trim()
+    trimmedPar = paragraph.trim()
+    am.innerText = punctuate(trimmedPar)
     item2.appendChild(am)
 });

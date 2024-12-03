@@ -11,6 +11,7 @@
     --greener: #348544;
     --yellowish: #f1f2e9;
     --darkyellowish: #d8d8c3;
+    --mutedred: #BA3333;
     --body-font: Lora, "Cactus Classical Serif", serif;
     --title-font: Urbanist, "LXGW WenKai TC";
 }
@@ -320,6 +321,21 @@ header > .cbox > h1 {
     /* border-left: 1px solid #bda4a4; */
 }
 
+.juan-style .judou {
+    position: relative;
+    margin-inline-start: -1.2em;
+    left: 0.65em;
+    top: 0.5em;
+    color: var(--mutedred);
+}
+
+.juan-style .small {
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    position: relative;
+    margin-bottom: 0.2em;
+    margin-top: -0.2em;
+}
 
 /* SIDEBAR */
 
