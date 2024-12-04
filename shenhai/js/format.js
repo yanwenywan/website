@@ -33,7 +33,7 @@ window.addEventListener("load", adjustPadding)
 window.addEventListener('resize', manageFiller);
 
 function adjustScroll() {
-    if (document.documentElement.scrollLeft === 0) {
+    if (document.documentElement.scrollLeft < document.documentElement.scrollWidth * 0.1) {
         document.documentElement.scrollLeft = document.documentElement.scrollWidth;
     }
 }
