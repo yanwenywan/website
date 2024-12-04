@@ -33,8 +33,14 @@ window.addEventListener("load", adjustPadding)
 window.addEventListener('resize', manageFiller);
 
 function adjustScroll() {
-    if (document.documentElement.scrollLeft < document.documentElement.scrollWidth * 0.1) {
-        document.documentElement.scrollLeft = document.documentElement.scrollWidth;
+    const doc = document.documentElement;
+    const threshold = doc.scrollWidth / 10; // 1/10th of the scrollWidth
+
+    if (doc.scrollLeft < threshold) {
+        // Use a slight delay to ensure proper rendering on mobile
+        setTimeout(() => {
+            doc.scrollLeft = doc.scrollWidth;
+        }, 100);
     }
 }
 
