@@ -121,6 +121,14 @@ a:visited {
     color: darkslategray;
 }
 
+span.tight {
+    letter-spacing: 2px;
+}
+
+.blank {
+    width: 1.5em
+}
+
 /* #endregion */
 
 /* #region juan paragraphs */
@@ -222,6 +230,25 @@ a:visited {
     position: relative;
     margin-bottom: 0.2em;
     margin-top: -0.2em;
+}
+
+.juan .blank {
+    border-left: 1.2pt solid var(--lines);
+}
+
+.juan .speechmark {
+    position: relative;
+    margin-inline-start: -0.35em;
+    margin-inline-end: -0.35em;
+    color: var(--mutedred);
+}
+
+.juan .speechmark.start {
+    left: 0.25em
+}
+
+.juan .speechmark.end {
+    right: 0.2em
 }
 
 /* #endregion */
