@@ -34,7 +34,7 @@ window.addEventListener('resize', manageFiller);
 
 function adjustScroll() {
     const doc = document.documentElement;
-    const threshold = doc.scrollWidth / 10; // 1/10th of the scrollWidth
+    const threshold = 200
 
     if (doc.scrollLeft < threshold) {
         // Use a slight delay to ensure proper rendering on mobile
