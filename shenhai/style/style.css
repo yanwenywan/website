@@ -313,8 +313,13 @@ c-box header::after {
 @media (max-width: 768px) {
     .return-button {
         bottom: unset;
-        top: calc(100vh - 4em);
+        top: calc(95vh - 4em);
         left: 1em;
+    }
+
+    c-box {
+        height: calc(90vh - 0.5em);
+        max-height: 36.2em;
     }
 }
 
