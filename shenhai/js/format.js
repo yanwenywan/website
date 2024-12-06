@@ -10,6 +10,20 @@ window.onload = () => {
         }
     }
 
+    addScrollButton();
+
+    // allow a tags to headers to scroll properly
+    // requires the onpage class
+    document.querySelectorAll('.onpage').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ inline: "end", block: "nearest", behavior: "smooth" });
+            }
+        });
+    });
+
 };
 
 window.addEventListener("wheel", event => {
@@ -20,29 +34,35 @@ window.addEventListener("wheel", event => {
     event.preventDefault();
 
     if (event.deltaY > 0) {
-        document.documentElement.scrollLeft -= 50; // Adjust scroll amount as needed
+        document.documentElement.scrollLeft -= 50; 
     } else if (event.deltaY < 0) {
-        document.documentElement.scrollLeft += 50; // Adjust scroll amount as needed
+        document.documentElement.scrollLeft += 50; 
     }
 }, {passive: false})
 
 window.addEventListener('load', manageFiller);
-window.addEventListener("load", adjustScroll)
-window.addEventListener("load", adjustPadding)
+window.addEventListener("load", adjustPadding);
 
 window.addEventListener('resize', manageFiller);
 
-function adjustScroll() {
-    const doc = document.documentElement;
-    const threshold = 200
-
-    if (doc.scrollLeft < threshold) {
-        // Use a slight delay to ensure proper rendering on mobile
-        setTimeout(() => {
-            doc.scrollLeft = doc.scrollWidth;
-        }, 100);
+document.addEventListener("DOMContentLoaded", () => {
+    const pageKey = `scroll_amount_${window.location.pathname}`;
+    const scrollAmount = sessionStorage.getItem(pageKey);
+    if (scrollAmount === null) {
+        document.documentElement.scrollLeft = document.body.scrollWidth;
+    } else {
+        document.documentElement.scrollLeft = parseInt(scrollAmount, 10);
     }
-}
+});
+
+let updateScrollTimeout;
+window.addEventListener("scroll", () => {
+    clearTimeout(updateScrollTimeout);
+    updateScrollTimeout = setTimeout(() => {
+        const pageKey = `scroll_amount_${window.location.pathname}`;
+        sessionStorage.setItem(pageKey, document.documentElement.scrollLeft);
+    }, 100);
+});
 
 function manageFiller() {
     let cbox = document.querySelector('c-box');
@@ -100,4 +120,43 @@ function adjustPadding() {
 
     // Apply calculated padding
     ol.style.paddingTop = `${totalPadding}em`;
+}
+
+function addScrollButton() {
+    const button = document.createElement("button");
+    button.style.position = "fixed";
+    button.style.bottom = "1em";
+    button.style.left = "1em";
+    button.style.padding = "0.5em";
+    button.style.background = "rgba(34, 34, 34, 0.2)";
+    button.style.border = "none";
+    button.style.borderRadius = "0.2em";
+    button.style.color = "rgba(255, 255, 255, 0.5)";
+    button.style.fontSize = "14pt";
+    button.style.direction = "rtl";
+    button.textContent = "反回卷頭 →";
+    button.style.transition = "background 0.2s";
+    button.style.fontFamily = "var(--body-font)"
+
+    button.addEventListener("mouseenter", () => {
+        button.style.background = "rgba(34, 34, 34, 0.4)";
+    });
+
+    button.addEventListener("mouseleave", () => {
+        button.style.background = "rgba(34, 34, 34, 0.2)";
+    });
+
+    button.addEventListener("mousedown", () => {
+        button.style.background = "rgba(34, 34, 34, 0.5)";
+    });
+
+    button.addEventListener("mouseup", () => {
+        button.style.background = "rgba(34, 34, 34, 0.4)";
+    });
+
+    button.addEventListener("click", () => {
+        document.documentElement.scrollLeft = document.documentElement.scrollWidth;
+    });
+
+    document.body.appendChild(button);
 }
