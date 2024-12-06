@@ -41,20 +41,18 @@ window.addEventListener("wheel", event => {
 
 window.addEventListener('load', manageFiller);
 window.addEventListener("load", adjustPadding);
-
-window.addEventListener('resize', manageFiller);
-
-document.addEventListener("load", () => {
+window.addEventListener("load", () => {
     const pageKey = `scroll_amount_${window.location.pathname}`;
     const scrollAmount = sessionStorage.getItem(pageKey);
     if (scrollAmount === null) {
         console.log("no session scroll");
         scrollToHead();
-        document.documentElement.scrollLeft = document.documentElement.scrollWidth;
     } else {
         document.documentElement.scrollLeft = parseInt(scrollAmount, 10);
     }
 });
+
+window.addEventListener('resize', manageFiller);
 
 let updateScrollTimeout;
 window.addEventListener("scroll", () => {
@@ -68,6 +66,7 @@ window.addEventListener("scroll", () => {
 function scrollToHead() {
     const header = document.querySelector('header');
     if (header) header.scrollIntoView({ block: 'nearest', inline: 'end', behavior: "smooth" });
+    document.documentElement.scrollLeft = document.documentElement.scrollWidth;
 }
 
 function manageFiller() {
