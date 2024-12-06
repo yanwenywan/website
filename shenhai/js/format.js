@@ -64,9 +64,12 @@ window.addEventListener("scroll", () => {
 });
 
 function scrollToHead() {
-    const header = document.querySelector('header');
-    if (header) header.scrollIntoView({ block: 'nearest', inline: 'end', behavior: "smooth" });
-    document.documentElement.scrollLeft = document.documentElement.scrollWidth;
+    if (isMobile()) {
+        const header = document.querySelector('header');
+        if (header) header.scrollIntoView({ block: 'nearest', inline: 'end', behavior: "smooth" });
+    } else {
+        document.documentElement.scrollLeft = document.documentElement.scrollWidth;
+    }
 }
 
 function manageFiller() {
@@ -153,4 +156,8 @@ function addScrollButton() {
 
     button.textContent = "反回卷頭 →";
     document.body.appendChild(button);
+}
+
+function isMobile() {
+    return window.matchMedia('(max-width: 768px)').matches;
 }
