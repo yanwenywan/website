@@ -44,7 +44,7 @@ window.addEventListener("load", adjustPadding);
 
 window.addEventListener('resize', manageFiller);
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("load", () => {
     const pageKey = `scroll_amount_${window.location.pathname}`;
     const scrollAmount = sessionStorage.getItem(pageKey);
     if (scrollAmount === null) {
