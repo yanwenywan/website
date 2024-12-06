@@ -220,7 +220,7 @@ span.tight {
     position: relative;
     margin-inline-start: -1.2em;
     left: 0.65em;
-    top: 0.5em;
+    top: 0.45em;
     color: var(--mutedred);
 }
 
@@ -257,7 +257,7 @@ span.tight {
 
 div.juanku {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     padding-left: 1em;
     justify-content: left;
     flex-wrap: wrap;
