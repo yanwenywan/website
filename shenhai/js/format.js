@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageKey = `scroll_amount_${window.location.pathname}`;
     const scrollAmount = sessionStorage.getItem(pageKey);
     if (scrollAmount === null) {
+        console.log("no session scroll");
         scrollToHead();
     } else {
         document.documentElement.scrollLeft = parseInt(scrollAmount, 10);
