@@ -50,6 +50,7 @@ document.addEventListener("load", () => {
     if (scrollAmount === null) {
         console.log("no session scroll");
         scrollToHead();
+        document.documentElement.scrollLeft = document.documentElement.scrollWidth;
     } else {
         document.documentElement.scrollLeft = parseInt(scrollAmount, 10);
     }
