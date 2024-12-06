@@ -1,10 +1,9 @@
 
 window.onload = () => {
-    
     let textBlocks = document.getElementsByClassName("juan");
     if (textBlocks.length > 0) {
         for (let i = 0; i < textBlocks.length; i++) {
-            console.log(textBlocks);
+            // console.log(textBlocks);
             
             textBlocks[i].innerHTML = punctuate(textBlocks[i].innerHTML);
         }
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageKey = `scroll_amount_${window.location.pathname}`;
     const scrollAmount = sessionStorage.getItem(pageKey);
     if (scrollAmount === null) {
-        document.documentElement.scrollLeft = document.body.scrollWidth;
+        scrollToHead();
     } else {
         document.documentElement.scrollLeft = parseInt(scrollAmount, 10);
     }
@@ -63,6 +62,11 @@ window.addEventListener("scroll", () => {
         sessionStorage.setItem(pageKey, document.documentElement.scrollLeft);
     }, 100);
 });
+
+function scrollToHead() {
+    const header = document.querySelector('header');
+    if (header) header.scrollIntoView({ block: 'nearest', inline: 'end', behavior: "smooth" });
+}
 
 function manageFiller() {
     let cbox = document.querySelector('c-box');
@@ -124,19 +128,7 @@ function adjustPadding() {
 
 function addScrollButton() {
     const button = document.createElement("button");
-    button.style.position = "fixed";
-    button.style.bottom = "1em";
-    button.style.left = "1em";
-    button.style.padding = "0.5em";
-    button.style.background = "rgba(34, 34, 34, 0.2)";
-    button.style.border = "none";
-    button.style.borderRadius = "0.2em";
-    button.style.color = "rgba(255, 255, 255, 0.5)";
-    button.style.fontSize = "14pt";
-    button.style.direction = "rtl";
-    button.textContent = "反回卷頭 →";
-    button.style.transition = "background 0.2s";
-    button.style.fontFamily = "var(--body-font)"
+    button.className = "return-button";
 
     button.addEventListener("mouseenter", () => {
         button.style.background = "rgba(34, 34, 34, 0.4)";
@@ -155,8 +147,9 @@ function addScrollButton() {
     });
 
     button.addEventListener("click", () => {
-        document.documentElement.scrollLeft = document.documentElement.scrollWidth;
+        scrollToHead();
     });
 
+    button.textContent = "反回卷頭 →";
     document.body.appendChild(button);
 }
