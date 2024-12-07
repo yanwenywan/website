@@ -322,6 +322,14 @@ c-box header::after {
 }
 
 @media (max-width: 768px) {
+    html, body {
+        overflow-y: hidden;
+    }
+
+    body {
+        position: relative;
+    }
+
     .return-button {
         bottom: unset;
         top: calc(95vh - 4em);
