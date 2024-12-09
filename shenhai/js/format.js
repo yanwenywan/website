@@ -41,7 +41,7 @@ window.addEventListener("wheel", event => {
 
 window.addEventListener('load', manageFiller);
 window.addEventListener("load", adjustPadding);
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
     const pageKey = `scroll_amount_${window.location.pathname}`;
     const scrollAmount = sessionStorage.getItem(pageKey);
     if (scrollAmount === null) {
@@ -105,7 +105,7 @@ function punctuate(text) {
         .replace(/([」])/g, '<span class="speechmark end">$1</span>')
         .replace(/【(.*)】/g, '<span class="black">$1</span>')
     let spanned = properJudou.replace(/([。，、；：])/g, '<span class="judou">$1</span>');
-    let commented = spanned.replace(/〔(.*)〕/g, (_, p1) => {
+    let commented = spanned.replace(/〔(.*?)〕/g, (_, p1) => {
         if (p1.length % 2 !== 0) {
             p1 += '　'; // Add ideographic fullwidth space if odd
         }

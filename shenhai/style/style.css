@@ -255,7 +255,7 @@ span.tight {
 .juan .black {
     background-color: var(--text);
     color: var(--light-paper);
-    border-radius: 0.1em;
+    border-radius: 0.05em;
     box-shadow: 0 -0.1em 0 0.1em var(--text);
 }
 
