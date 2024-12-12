@@ -11,7 +11,7 @@ def make_text_sub_element(parent:Element, name:str, text:str, attrib:dict[str, s
     tag.text = text
 
 
-def create_blank_rss():
+def create_blank_rss_dagengren():
     rss = etree.Element("rss", version="2.0")
     channel = etree.SubElement(rss, "channel")
     make_text_sub_element(channel, "title", "大奉打更人 Nightwatchers of Feng - Yanwenyuan")

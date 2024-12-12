@@ -31,7 +31,7 @@ class DagengrenWriter:
         #     self.log(e)
 
     def write(self):
-        feed, channel = util.create_blank_rss()
+        feed, channel = util.create_blank_rss_dagengren()
         
         self.add_volumes(channel)
     
@@ -79,7 +79,7 @@ class DagengrenWriter:
             
             feed.append(util.create_item(
                 chapter_link,
-                chapter_name,
+                f"v{volume_num}c{chapter}: {chapter_name}",
                 f"Volume {volume_num} Chapter {chapter}",
                 datetime.fromtimestamp(os.path.getctime(chapter_file_path))
             ))
