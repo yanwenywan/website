@@ -1,5 +1,6 @@
 from xml.etree.ElementTree import Element
 from bs4 import BeautifulSoup, ResultSet
+from typing import Union
 import bs4
 import xml.etree.ElementTree as etree
 import os
@@ -11,7 +12,7 @@ def CDATA(text=None):
     return element
 
 
-def make_text_sub_element(parent:Element, name:str, text:str|None=None, attrib:dict[str, str]=dict(), **extra:str):
+def make_text_sub_element(parent:Element, name:str, text:Union[str, None]=None, attrib:dict[str, str]=dict(), **extra:str):
     tag = etree.SubElement(parent, name, attrib, **extra)
     tag.text = text
     return tag
