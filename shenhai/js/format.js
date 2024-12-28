@@ -100,7 +100,12 @@ function manageFiller() {
 
 function punctuate(text) {
     let properJudou = text
-        .replace(/[，]/g, "、").replace(/[；：？！]/g, "。")
+        .replace(/[，]/g, "、")
+        .replace(/[；：？！]/g, "。")
+        .replace(/(?<!\\)（）/g, "&#x3000;") // 单空
+        .replace(/(?<!\\)（（/g, "&#x3000;&#x3000;") // 双空
+        .replace(/\\（）/g, "（）")
+        .replace(/\\（（/g, "（（")
         .replace(/([「])/g, '<span class="speechmark start">$1</span>')
         .replace(/([」])/g, '<span class="speechmark end">$1</span>')
         .replace(/【(.*)】/g, '<span class="black">$1</span>')
