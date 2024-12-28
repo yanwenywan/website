@@ -108,7 +108,7 @@ function punctuate(text) {
         .replace(/\\（（/g, "（（")
         .replace(/([「])/g, '<span class="speechmark start">$1</span>')
         .replace(/([」])/g, '<span class="speechmark end">$1</span>')
-        .replace(/【(.*)】/g, '<span class="black">$1</span>')
+        .replace(/【(.*?)】/g, '<span class="black">$1</span>')
     let spanned = properJudou.replace(/([。，、；：])/g, '<span class="judou">$1</span>');
     let commented = spanned.replace(/〔(.*?)〕/g, (_, p1) => {
         if (p1.length % 2 !== 0) {
@@ -116,7 +116,7 @@ function punctuate(text) {
         }
         return `<span class="small">${p1}</span>`;
     });
-    let titled = commented.replace(/《(.*)》/g, '<span style="text-decoration: underline wavy var(--mutedred);">$1</span>');
+    let titled = commented.replace(/《(.*?)》/g, '<span style="text-decoration: underline wavy var(--mutedred);">$1</span>');
     return titled
 }
 
