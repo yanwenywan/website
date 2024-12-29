@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Jersey+10&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400,700&display=swap');
 
 :root {
     --green: #3a6342;
@@ -13,8 +13,8 @@
     --background: #dddddd;
     --text: #222222;
     --shadow: #22222299;
-    --body-font: Lora, "Cactus Classical Serif", serif;
-    --title-font: Lora, "Cactus Classical Serif", serif;
+    --body-font: Lora, "Cactus Classical Serif", "Noto Serif SC", serif;
+    --title-font: Lora, "Cactus Classical Serif", "Noto Serif SC", serif;
 }
 
 @counter-style cjk-decimal-spaced {
@@ -92,6 +92,10 @@ c-box header img.seal {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+img.multiply-blend {
+    mix-blend-mode: multiply;
 }
 
 h2 {
@@ -250,7 +254,8 @@ span.tight {
 }
 
 .juan .speechmark.end {
-    right: 0.2em
+    right: 0.2em;
+    top: -0.12em;
 }
 
 .juan .black {

@@ -106,8 +106,12 @@ function punctuate(text) {
         .replace(/(?<!\\)（（/g, "&#x3000;&#x3000;") // 双空
         .replace(/\\（）/g, "（）")
         .replace(/\\（（/g, "（（")
-        .replace(/([「])/g, '<span class="speechmark start">$1</span>')
-        .replace(/([」])/g, '<span class="speechmark end">$1</span>')
+        .replace(/“/g, "「")
+        .replace(/”/g, "」")
+        .replace(/‘/g, "『")
+        .replace(/’/g, "』")
+        .replace(/([「『])/g, '<span class="speechmark start">$1</span>')
+        .replace(/([」』])/g, '<span class="speechmark end">$1</span>')
         .replace(/【(.*?)】/g, '<span class="black">$1</span>')
     let spanned = properJudou.replace(/([。，、；：])/g, '<span class="judou">$1</span>');
     let commented = spanned.replace(/〔(.*?)〕/g, (_, p1) => {
