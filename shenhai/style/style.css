@@ -269,6 +269,39 @@ span.tight {
     text-decoration: underline solid var(--mutedred);
 }
 
+/*破坏矣
+
+是用于仿ctext之格式*/
+
+.juan span.inlay1 {
+    font-size: 15pt;
+    color: var(--text);
+}
+
+.juan span.inlay1 .black, .juan span.inlay2 .black {
+    background-color: var(--green);
+    box-shadow: 0 -0.1em 0 0.1em var(--green);
+}
+
+.juan span.inlay2 {
+    font-size: 15pt;
+    color: var(--green);
+    letter-spacing: 0.15em;
+}
+
+.juan span.number {
+    font-size: 15pt;
+    display: inline;
+    color: var(--light-paper);
+    background-color: var(--green);
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    padding-top: 0.2em;
+    margin-top: -0.2em;
+    margin-bottom: 0.2em;
+    letter-spacing: 0;
+    border-radius: 0.2em;
+}
 /* #endregion */
 
 /* #region flex juanku list items */
