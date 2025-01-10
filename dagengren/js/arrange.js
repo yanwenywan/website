@@ -42,15 +42,16 @@ function getCurrentChapterNumber() {
 
 function convertBodyMd(bodyTextElement, converter) {
 	bodyTextElement.textContent = preprocessFootnoteIcons(bodyTextElement.textContent);
+	bodyTextElement.textContent = smartenQuotes(bodyTextElement.textContent);
 	let converted = converter.makeHtml(bodyTextElement.textContent)
 	bodyTextElement.innerHTML = converted;
-	bodyTextElement.innerHTML = smartenQuotes(bodyTextElement.innerHTML);
+	// bodyTextElement.innerHTML = smartenQuotes(bodyTextElement.innerHTML);
 }
 
 function smartenQuotes(a) {
 	a = a.replace(/(^|[-\u2014\s(\["])'/g, "$1\u2018"); // opening singles
+	a = a.replace(/(^|[-\u2014\s(\['])"/g, "$1\u201c"); // opening doubles
 	a = a.replace(/'/g, "\u2019"); // closing singles & apostrophes
-	a = a.replace(/(^|[-\u2014/\[(\u2018\s])"/g, "$1\u201c"); // opening doubles
 	a = a.replace(/"/g, "\u201d"); // closing doubles
 	return a
 };
