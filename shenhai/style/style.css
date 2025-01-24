@@ -13,8 +13,8 @@
     --background: #dddddd;
     --text: #222222;
     --shadow: #22222299;
-    --body-font: Lora, "Cactus Classical Serif", "Noto Serif SC", serif;
-    --title-font: Lora, "Cactus Classical Serif", "Noto Serif SC", serif;
+    --body-font: Lora, "KingHwa_OldSong", "Cactus Classical Serif", "Noto Serif SC", serif;
+    --title-font: Lora, "KingHwa_OldSong", "Cactus Classical Serif", "Noto Serif SC", serif;
 }
 
 @counter-style cjk-decimal-spaced {
@@ -230,6 +230,11 @@ span.tight {
     color: var(--mutedred);
 }
 
+.kinghwa-loaded .juan .judou {
+    left: 0.35em;
+    top: 0.65em
+}
+
 .juan .small {
     font-size: 9pt;
     letter-spacing: 0.2em;
@@ -247,6 +252,11 @@ span.tight {
     margin-inline-start: -0.35em;
     margin-inline-end: -0.35em;
     color: var(--mutedred);
+}
+
+.kinghwa-loaded .juan .speechmark {
+    margin-inline-start: -0.5em;
+    margin-inline-end: -0.7em;
 }
 
 .juan .speechmark.start {
@@ -292,6 +302,11 @@ span.tight {
 .juan span.inlay1 .speechmark, .juan span.inlay2 .speechmark {
     margin-inline-start: -0.3em;
     margin-inline-end: -0.3em;
+}
+
+.kinghwa-loaded .juan span.inlay1 .speechmark, .kinghwa-loaded .juan span.inlay2 .speechmark {
+    margin-inline-start: -0.45em;
+    margin-inline-end: -0.6em;
 }
 
 .juan span.number {

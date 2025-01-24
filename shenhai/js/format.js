@@ -23,6 +23,8 @@ window.onload = () => {
         });
     });
 
+    checkIfKinghwaStylingActive();
+
 };
 
 window.addEventListener("wheel", event => {
@@ -43,10 +45,12 @@ window.addEventListener('load', manageFiller);
 window.addEventListener("load", adjustPadding);
 window.addEventListener("DOMContentLoaded", () => {
     const pageKey = `scroll_amount_${window.location.pathname}`;
+    const pageKeyPresence = pageKey + "_presence";
+    
     const scrollAmount = sessionStorage.getItem(pageKey);
     if (scrollAmount === null) {
         console.log("no session scroll");
-        scrollToHead();
+        scrollToHead(pageKeyPresence);
     } else {
         document.documentElement.scrollLeft = parseInt(scrollAmount, 10);
     }
@@ -59,17 +63,41 @@ window.addEventListener("scroll", () => {
     clearTimeout(updateScrollTimeout);
     updateScrollTimeout = setTimeout(() => {
         const pageKey = `scroll_amount_${window.location.pathname}`;
+        const pageKeyPresence = pageKey + "_presence";
         sessionStorage.setItem(pageKey, document.documentElement.scrollLeft);
+        sessionStorage.setItem(pageKeyPresence, "true")
     }, 100);
 });
 
-function scrollToHead() {
-    if (isMobile()) {
+function scrollToHead(presenseKey) {
+    if (isMobile() && sessionStorage.getItem(presenseKey) !== "true") {
         const header = document.querySelector('header');
         if (header) header.scrollIntoView({ block: 'nearest', inline: 'end', behavior: "smooth" });
     } else {
         document.documentElement.scrollLeft = document.documentElement.scrollWidth;
     }
+}
+
+function checkIfKinghwaStylingActive() {
+    if (isFontAvailable("KingHwa_OldSong")) {
+        document.body.classList.add("kinghwa-loaded");
+    }
+}
+
+function isFontAvailable(fontName) {
+    let testString = "abcdefgMMIILLP01923中华烟（吸烟有害）";
+    let fallback = "monospace";
+
+    let canvas = document.createElement("canvas");
+    let context = canvas.getContext("2d");
+
+    context.font = `72px ${fallback}`;
+    let baseline = context.measureText(testString).width;
+
+    context.font = `72px "${fontName}", ${fallback}`;
+    let testWidth = context.measureText(testString).width;
+
+    return testWidth !== baseline;
 }
 
 function manageFiller() {
