@@ -252,7 +252,8 @@ function populateContents() {
     if (paragraph.commentary && paragraph.commentary.length > 0) {
         for (const entry of paragraph.commentary) {
             const p = document.createElement('p');
-            p.innerHTML = wrapSuperscriptRefs(entry.text);
+            // p.innerHTML = wrapSuperscriptRefs(entry.text);
+            p.innerHTML = entry.text;
             if (entry.type === "SMALL") {
                 p.classList.add('small');
             }
