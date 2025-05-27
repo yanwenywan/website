@@ -2,3 +2,4 @@
 **/__pycache__/
 ignore/
 jsconfig.json
+*.code-workspace
