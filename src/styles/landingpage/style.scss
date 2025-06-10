@@ -1,0 +1,27 @@
+@use "../colour.scss";
+@use "../font.scss";
+
+body {
+    background-color: colour.$bg-standard;
+    color: colour.$txt-standard;
+    font-family: font.$landing;
+    font-size: 12pt;
+}
+
+.cbox {
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+    max-width: 840px;
+    width: 90%;
+    flex-direction: column;
+}
+
+p.small {
+    font-size: 10pt;
+}
+
+h1 {
+    text-align: center;
+    font-family: font.$landing;
+}

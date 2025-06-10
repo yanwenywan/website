@@ -1,16 +1,92 @@
 ---
-
+import "../styles/landingpage/style.scss"
 ---
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Yanwenyuan.uk</title>
 		<link rel="icon" type="image/png" href="/icon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Yanwenyuan</title>
 	</head>
 	<body>
-		<h1>Home Site</h1>
+		<div class="cbox">
+			<h1>
+				<img
+					src="/ywy-full-compressed.svg"
+					alt="燕文院"
+					style="max-width: 240px; margin-bottom: -20px;"
+				/>
+			</h1>
+
+			<p style="text-align: center; margin-top: -1.2em;">Yanwenyuan</p>
+
+			<p>
+				君访陋院，燕某欢甚。本页者，录也，存吾燕某之作，又收他书，同可通友方。<br
+				/>
+				(This is a Landing Page for Yan and others' works)
+			</p>
+
+			<h3>作 Creations</h3>
+
+			<ul>
+				<li>
+					<a href="./baoyu/">暴雨中：In Torrential Rains</a> (一篇玄幻故事；进行中)
+				</li>
+				<li>
+					<a href="./shenhai/"
+						>神海大作集：Collections from the Celestial Sea</a
+					>（竖排繁体文言短篇小说）
+				</li>
+			</ul>
+
+			<h3>译 Translations</h3>
+
+			<ul>
+				<li>
+					<a href="./dagengren/"
+						>大奉打更人：The Nightwatchers of Feng by 卖报小郞君</a
+					> (ongoing, English translation)
+				</li>
+			</ul>
+
+			<h3>随意收罗的书籍</h3>
+
+			<ul>
+				<li>
+					<a href="./fengshen/">封神演义【明】许仲林</a>（简）
+				</li>
+				<li>
+					<a href="./shiji/">史記三家注【漢】司馬遷</a>
+				</li>
+				<li><a href="./shishuo/">師說【唐】韓愈</a></li>
+				<li>
+					<a href="./jimengyaojue/"
+						>擊蒙要訣【清】李珥；自《栗谷先生全書》</a>
+				</li>
+				<li>
+					<a href="./zhuangzijishi/"
+						>莊子集釋【清】郭慶藩（特殊排版）</a>
+				</li>
+			</ul>
+
+			<h3>友院</h3>
+
+			<ul>
+				<li>
+					<a href="https://vistudium.top/">遠見齋</a> Hulenkius
+				</li>
+			</ul>
+
+			<footer>
+
+            <hr> 
+            <p class="small">
+				本网者由（Astro）所成，尝试之而颇好其理。全站燕某所设。
+            </p>
+
+        </footer>
+		</div>
 	</body>
 </html>
