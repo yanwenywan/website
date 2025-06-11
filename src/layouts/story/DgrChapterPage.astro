@@ -1,0 +1,81 @@
+---
+// @ts-nocheck
+import "../../styles/story/common.scss";
+
+const { title, prev, next } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="shortcut icon" href="/icon.png" type="image/png">
+        <title>{title}</title>
+    </head>
+    <body>
+        <p class="subheading">
+            <a href="../">Back</a>
+        </p>
+
+        <div class="chapter-box">
+            <slot />
+        </div>
+        <div class="chapter-box">
+            <div class="threecol">
+                {
+                    prev ? (
+                        <p>
+                            <a href={`./${prev}`}>Back</a>
+                        </p>
+                    ) : (
+                        <span />
+                    )
+                }
+                <p class="centre"><a href="../">Home</a></p>
+                {
+                    next ? (
+                        <p class="right">
+                            <a href={`./${next}`}>Next</a>
+                        </p>
+                    ) : (
+                        <span />
+                    )
+                }
+            </div>
+
+            <h3>Page Comments</h3>
+
+            <p class="small">
+                Comments for this chapter. You will need a GitHub account.
+                Please follow all terms and conditions of GitHub issues and
+                maintain etiquette in the comments. Cookies are required for
+                this functionality.
+            </p>
+
+            <script
+                src="https://utteranc.es/client.js"
+                repo="yanwenywan/website"
+                issue-term="pathname"
+                label="comment thread"
+                theme="github-light"
+                crossorigin="anonymous"
+                async></script>
+
+            <p class="small">
+                If you want to talk with other readers about Nightwatchers (or
+                other cultivation type books) you can join our <a
+                    href="https://discord.gg/fVj6Ab9pSM"
+                    >cultivation groupreading discord server</a
+                >!
+            </p>
+            <p class="small">
+                I also have a Kofi, which for legal reasons is definitely for
+                supporting my digital art only (promise!): <a
+                    href="https://ko-fi.com/yanxin">ko-fi.com/yanxin</a
+                > ... plus I guess server space isn't free, and I don't want to put
+                ads/trackers... ever, so thank you if you do!
+            </p>
+        </div>
+    </body>
+</html>

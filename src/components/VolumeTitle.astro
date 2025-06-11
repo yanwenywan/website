@@ -1,0 +1,17 @@
+---
+const { title, subtitle } = Astro.props;
+---
+<h2 class="centre">
+    {title}
+</h2>
+<p class="immediate-margin">
+    {subtitle}
+</p>
+
+<style>
+    p.immediate-margin {
+        text-align: center;
+        margin-top: -20px;
+        margin-bottom: 40px;
+    }
+</style>

@@ -1,0 +1,54 @@
+@use "../colour.scss";
+
+.chapter-box {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 90%;
+    background-color: colour.$page-dark;
+    padding: 60px;
+    border-left: 1px solid colour.$main;
+    border-right: 1px solid colour.$main;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+
+    .threecol {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .chapter-box {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .chapter-box {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .chapter-box {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .chapter-box {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .chapter-box {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

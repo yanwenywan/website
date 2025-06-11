@@ -1,0 +1,28 @@
+---
+// Collapsible.astro
+import "../styles/story/collapsible.scss";
+const { displayName } = Astro.props;
+---
+
+<div class="collapsible side" tabindex="0">
+  <span class="collapsible-icon">▸</span>
+  {displayName}
+</div>
+<div class="collapsible-content side">
+  <slot />
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  for (const col of document.querySelectorAll('.collapsible')) {
+    col.addEventListener('click', function (this: HTMLDivElement) {
+      this.classList.toggle('active');
+      const content = this.nextElementSibling;
+      const icon = this.querySelector('.collapsible-icon');
+      if (!content || !icon) return;
+      const open = content.classList.toggle('open');
+      icon.textContent = open ? "▾" : "▸";
+    });
+  }
+});
+</script>

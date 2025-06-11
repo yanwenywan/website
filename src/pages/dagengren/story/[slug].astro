@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import ChapterPage from "../../../layouts/story/DgrChapterPage.astro";
+
+// mandatory for this "dynamic route" to work
+export async function getStaticPaths() {
+    const entries = await getCollection("dagengren-chapters");
+    // sort by numeric filename
+    const sorted = entries.sort((a, b) => Number(a.slug) - Number(b.slug));
+    return sorted.map((entry, i) => ({
+        params: { slug: entry.slug },
+        props: {
+            entry,
+            prev: i > 0 ? sorted[i - 1].slug : null,
+            next: i < sorted.length - 1 ? sorted[i + 1].slug : null,
+        },
+    }));
+}
+
+const { entry: post, prev, next } = Astro.props as {
+  entry: any;
+  prev: string | null;
+  next: string | null;
+};
+
+const { Content, headings } = await post.render();
+const title = headings[0]?.text ?? post.slug;
+---
+
+<ChapterPage title={title} prev={prev}, next={next}>
+    <Content />
+</ChapterPage>

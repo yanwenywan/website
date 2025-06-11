@@ -1,0 +1,31 @@
+@use "../colour.scss";
+
+.collapsible {
+    cursor: pointer;
+    user-select: none;
+    padding-left: 10px;
+    border-left: 1px solid colour.$main;
+    transition: background 0.2s;
+
+    &:hover {
+        background-color: colour.$grey-high;
+    }
+
+    &.active {
+        margin-bottom: -1em;
+    }
+}
+
+.collapsible-icon {
+    margin-right: 0.25em;
+}
+
+.collapsible-content {
+    padding-left: 10px;
+    border-left: 1px solid colour.$main;
+    display: none;
+
+    &.open {
+        display: block;
+    }
+}

@@ -3,6 +3,9 @@ layout: "../../layouts/story/LandingPage.astro"
 title: 大奉打更人 · The Nightwatchers of Feng
 ---
 import Subtitle from "../../components/Subtitle.astro"
+import Collapsible from "../../components/Collapsible.astro"
+import VolumeTitle from "../../components/VolumeTitle.astro"
+import DgrChapters from "../../components/DgrChapters.astro"
 
 # 大奉打更人 · The Nightwatchers of Feng
 
@@ -27,3 +30,39 @@ However, just like the sun’s rays gleaming over the towering mountains, after 
 *Translators: Daoist Yan, Anthethesis*
 
 *Also called: Nightwatcher, Great Feng's Nightwatcher, Dafeng's Night Squad*
+
+<Collapsible displayName="Pinyin romanisation note">
+We generally use Standard Pinyin for everything, except *ü* is rendered as *yu* because it's easier to type.
+
+For those unfamiliar with pinyin, pronounce:
+
+*   **ü** as **yu** or umlaut-u if you know German
+*   **j** as a **hard j**
+*   **q** as **ch**
+*   **x** as **sh/sy**
+*   **z** as **dz**
+*   **c** as **ts**
+*   **zh** as **dg/j**
+*   **zhi chi shi** have a "phantom i"; say like **zhr chr shr**
+*   **zi ci si** same thing; drop the i -> **dz ts ss**
+*   All the other **i**s are pronounced, like **ii** or **ee**.
+*   Everything else is roughly as is in english
+
+(This is close enough to get you through)
+
+Ex. Xu Qi'an -> ~Shyu Chii-an
+</Collapsible>
+
+## Contents 
+
+---
+
+<VolumeTitle title="Volume 1. The Winds of the Official Evaluation"
+             subtitle="卷一：京察风云" />
+
+<DgrChapters start={1} end={230} />
+
+<VolumeTitle title="Volume 2. Unmatched in the Nation"
+             subtitle="卷二：国士无双" />
+
+<DgrChapters start={231} />

@@ -1,5 +1,6 @@
 @use "../colour.scss";
 @use "../font.scss";
+@use "./chapter-box.scss";
 
 body {
     background-color: colour.$bg-standard;
