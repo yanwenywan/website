@@ -1,0 +1,24 @@
+@use "../colour.scss";
+@use "../font.scss";
+
+body {
+    background-color: colour.$bg-standard;
+    color: colour.$txt-standard;
+    font-family: font.$story-body;
+    font-size: 12pt;
+}
+
+.cbox {
+    display: block;
+    margin: 0 auto;
+    align-self: center;
+    max-width: 800px;
+    width: 90%;
+}
+
+.green-side-container {
+    box-shadow: 0px 0px 5px 3px colour.$main-shadow;
+    padding: 20px;
+    min-height: 102vh;
+    margin-top: -15px;
+}
