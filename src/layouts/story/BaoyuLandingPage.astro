@@ -1,0 +1,21 @@
+---
+import LandingBox from "../../components/LandingBox.astro";
+import "../../styles/story/common.scss"
+import "../../styles/story/baoyu.scss"
+const {frontmatter} = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="shortcut icon" href="/icon.png" type="image/png">
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <LandingBox>
+            <slot />
+        </LandingBox>
+    </body>
+</html>

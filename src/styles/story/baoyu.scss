@@ -1,0 +1,29 @@
+@use "../font.scss";
+
+p {
+    font-size: 14pt;
+    line-height: 1.7;
+}
+
+.subheading {
+    text-align: center;
+    font-family: "Noto Serif SC", font.$story-header;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 14pt;
+    margin-left: 1em;
+    line-height: 1.7;
+    margin-right: 1em;
+
+    p {
+        text-indent: 0em !important;  // bloody
+    }
+}
+
+.chapter-box {
+    p {
+        text-indent: 2em;
+    }
+}

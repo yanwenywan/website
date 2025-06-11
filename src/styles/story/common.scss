@@ -24,11 +24,7 @@ body {
     margin-top: -15px;
 }
 
-.subheading {
-    text-align: center;
-    font-style: italic;
-    font-family: font.$story-header;
-}
+
 
 h1 {
     font-family: font.$story-header;
@@ -44,7 +40,6 @@ h2 {
 }
 
 p {
-    font-size: 13pt;
 
     &.small {
         font-size: 10pt;

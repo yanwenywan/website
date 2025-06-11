@@ -1,0 +1,66 @@
+---
+// src/components/ChapterIndex.astro
+import { getCollection } from "astro:content";
+
+interface Props {
+  start: number;
+  end?: number;
+}
+const { start, end } = Astro.props as Props;
+
+// 1. Load & sort all entries numerically
+const entries = await getCollection("baoyu-chapters");
+const sorted = entries.sort((a, b) => Number(a.slug) - Number(b.slug));
+
+// 2. Determine effective end (inclusive)
+const last = sorted.length ? Number(sorted[sorted.length - 1].slug) : 0;
+const effectiveEnd = end ?? last;
+
+// 3. Filter to [start..effectiveEnd]
+const slice = sorted.filter((e) => {
+  const n = Number(e.slug);
+  return n >= start && n <= effectiveEnd;
+});
+
+// 4. Build list of { slug, title }
+const list = await Promise.all(
+  slice.map(async (entry) => {
+    const { headings } = await entry.render();
+    // raw = "134. Title Title" or fallback to slug
+    const raw = headings[0]?.text ?? entry.slug;
+    // drop the leading "N. "
+    const afterDot = raw.includes(". ")
+      ? raw.split(". ").slice(1).join(". ")
+      : raw;
+    // strip a single trailing number, e.g. "Chapter Name 7" → "Chapter Name"
+    const title = /\d$/.test(afterDot)
+      ? afterDot.slice(0, -1)
+      : afterDot;
+    return { slug: entry.slug, title };
+  }),
+);
+---
+
+<ol>
+  {
+    list.map(({ slug, title }) => (
+      <li>
+        <a href={`/baoyu/story/${slug}`}>【{title}】</a>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30pt;
+  }
+
+  @media (max-width: 500px) {
+    ol {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

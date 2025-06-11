@@ -1,0 +1,58 @@
+---
+// @ts-nocheck
+import "../../styles/story/common.scss";
+import "../../styles/story/baoyu.scss";
+import * as cn from "chinese-numbering";
+
+const { title, prev, next, index } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="shortcut icon" href="/icon.png" type="image/png">
+        <title>{title}</title>
+    </head>
+    <body>
+        <h1>{
+            cn.numberToChineseOrdinal(index)
+        }章</h1>
+        <p class="subheading">
+            <a href="../">目录</a>
+        </p>
+
+        <div class="chapter-box">
+            <slot />
+        </div>
+        <div class="chapter-box">
+            <div class="threecol">
+                {
+                    prev ? (
+                        <p style="text-indent: 0;">
+                            <a href={`./${prev}`}>上一章</a>
+                        </p>
+                    ) : (
+                        <span />
+                    )
+                }
+                <p class="centre"><a href="../">目录</a></p>
+                {
+                    next ? (
+                        <p class="right">
+                            <a href={`./${next}`}>下一章</a>
+                        </p>
+                    ) : (
+                        <span />
+                    )
+                }
+            </div>
+
+
+            <p class="small">
+                且看能写多少。
+            </p>
+        </div>
+    </body>
+</html>

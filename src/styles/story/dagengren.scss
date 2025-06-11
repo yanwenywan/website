@@ -1,0 +1,11 @@
+@use "../font.scss";
+
+p {
+    font-size: 13pt;
+}
+
+.subheading {
+    text-align: center;
+    font-style: italic;
+    font-family: font.$story-header;
+}

@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import ChapterPage from "../../../layouts/story/DgrChapterPage.astro";
+import ChapterPage from "../../../layouts/story/BaoyuChapterPage.astro";
 
 // mandatory for this "dynamic route" to work
 export async function getStaticPaths() {
-    const entries = await getCollection("dagengren-chapters");
+    const entries = await getCollection("baoyu-chapters");
     // sort by numeric filename
     const sorted = entries.sort((a, b) => Number(a.slug) - Number(b.slug));
     return sorted.map((entry, i) => ({
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
             entry,
             prev: i > 0 ? sorted[i - 1].slug : null,
             next: i < sorted.length - 1 ? sorted[i + 1].slug : null,
-            index: i
+            index: i + 1
         },
     }));
 }
