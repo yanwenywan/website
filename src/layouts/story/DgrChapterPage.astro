@@ -8,6 +8,15 @@ const { title, prev, next } = Astro.props;
 
 <html lang="en">
     <head>
+        <!-- redirect /xxx.html → /xxx without involving Astro’s router -->
+        <script>
+            const p = location.pathname;
+            if (p.endsWith('.html')) {
+            // strip “.html” and keep any search/hash
+            const newPath = p.slice(0, -5) + location.search + location.hash;
+            location.replace(newPath);
+            }
+        </script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
