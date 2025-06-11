@@ -1,4 +1,9 @@
+@use "large/kinghwa.scss";
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@460;750&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 $landing: 'Manrope', 'Noto Serif SC', sans-serif;
+$story-body: 'Lora', 'Noto Serif SC', serif;
+$story-header: 'Manrope', sans-serif;
+$classical: kinghwa.$kinghwa, 'Noto Serif SC', serif;
