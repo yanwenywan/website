@@ -23,6 +23,12 @@ body {
     margin-top: -15px;
 }
 
+.subheading {
+    text-align: center;
+    font-style: italic;
+    font-family: font.$story-header;
+}
+
 h1 {
     font-family: font.$story-header;
     text-align: center;
@@ -50,12 +56,6 @@ p {
     &.right {
         text-align: right;
     }
-
-    &.subheading {
-        text-align: center;
-        font-style: italic;
-        font-family: font.$story-header;
-    }
 }
 
 a {
@@ -66,7 +66,7 @@ a {
         text-decoration: underline;
         color: crimson;
     }
-    
+
     &:visited {
         color: colour.$main-light;
     }
