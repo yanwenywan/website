@@ -22,3 +22,52 @@ body {
     min-height: 102vh;
     margin-top: -15px;
 }
+
+h1 {
+    font-family: font.$story-header;
+    text-align: center;
+}
+
+h2 {
+    font-family: font.$story-header;
+
+    &.centre {
+        text-align: center;
+    }
+}
+
+p {
+    font-size: 13pt;
+
+    &.small {
+        font-size: 10pt;
+    }
+
+    &.centre {
+        text-align: center;
+    }
+
+    &.right {
+        text-align: right;
+    }
+
+    &.subheading {
+        text-align: center;
+        font-style: italic;
+        font-family: font.$story-header;
+    }
+}
+
+a {
+    color: colour.$main;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: crimson;
+    }
+    
+    &:visited {
+        color: colour.$main-light;
+    }
+}
