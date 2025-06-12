@@ -1,0 +1,386 @@
+@use "../colour.scss";
+@use "../font.scss";
+
+@counter-style cjk-decimal-spaced {
+    system: numeric;
+    range: 0 infinite;
+    symbols: '\3007' '\4E00' '\4E8C' '\4E09' '\56DB' '\4E94' '\516D' '\4E03' '\516B' '\4E5D';
+    /* symbols: 〇 一 二 三 四 五 六 七 八 九; */
+    suffix: "\3000";
+}
+
+
+body {
+    background-color: colour.$bg-standard;
+    color: colour.$txt-standard;
+    font-family: font.$classical;
+    height: 100%;
+    /* display: flex; */
+    /* flex-direction: row-reverse; */
+    font-size: 18pt;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* #region .cbox fundamentals */
+
+.cbox {
+    display: block;
+    writing-mode: vertical-rl;
+    height: calc(95vh - 0.5em);
+    max-height: 36.2em;
+    padding: 0.5em;
+    flex-shrink: 0;
+}
+
+.cbox p {
+    line-height: 150%;
+    letter-spacing: 0.2em;
+    margin: 0.75em 0.5em;
+}
+
+.cbox h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: font.$classical;
+}
+
+.cbox header p {
+    margin: 0;
+}
+
+.cbox header {
+    background-color: colour.$page-dark;
+    padding: 3em 1.5em 6em 1.5em;
+    border-top: 4pt double colour.$main;
+    border-bottom: 4pt double colour.$main;
+    border-left: 1pt solid colour.$main;
+    border-right: 1pt solid colour.$main;
+    position: relative; /* Needed for inner borders */
+    margin-left: 1em;
+    position: relative;
+    box-shadow: 1px 2px 5px colour.$shenhai-shadow;
+}
+
+.cbox header > .header-footer {
+    position: absolute;
+    bottom: 1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 6em;
+}
+
+.cbox header img.seal {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+img.multiply-blend {
+    mix-blend-mode: multiply;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.75em 0.5em ;
+}
+
+h3 {
+    font-size: 1em;
+    margin: 0.75em 0.5em ;
+}
+
+a {
+    color: colour.$main;
+    text-decoration: none;
+}
+
+a:hover, a:hover:visited {
+    color: crimson;
+    text-decoration: line-through;
+}
+
+a.black {
+    color: colour.$txt-standard;
+}
+
+a:visited {
+    color: darkslategray;
+}
+
+span.tight {
+    letter-spacing: 2px;
+}
+
+.blank {
+    width: 1.5em
+}
+
+/* #endregion */
+
+/* #region juan paragraphs */
+
+.juan {
+    display: block;
+    
+    background-color: colour.$page-dark;
+    border-top: 5px double colour.$main;
+    border-bottom: 5px double colour.$main;
+    padding: 1em;
+    margin-left: 1em;
+
+    box-shadow: 1px 2px 5px colour.$shenhai-shadow;
+}
+
+.juan p {
+    margin: 0;
+}
+
+.juan h2 {
+    margin: 0;    
+    border-left: 1.2pt solid colour.$linework;
+}
+
+.juan h3 {
+    margin: 0;
+    border-left: 1.2pt solid colour.$linework;
+}
+
+.juan p {
+    background: repeating-linear-gradient(
+        270deg,
+        colour.$page-dark, colour.$page-dark 1.444em,
+        colour.$linework 1.444em, colour.$linework 1.5em
+    );
+}
+
+.juan blockquote {
+    margin: 0;
+    line-height: 150%;
+    /* padding-top: 2.4em; */
+    padding-top: 1.2em;
+    padding-left: 0.1em;
+    background: repeating-linear-gradient(
+        270deg,
+        colour.$page-dark, colour.$page-dark 1.444em,
+        colour.$linework 1.444em, colour.$linework 1.5em
+    );
+    letter-spacing: 0.2em;
+}
+
+.juan figure {
+    margin: 0 0.3em 0 0em;
+    padding-left: 0.3em;
+    border-left: 1.2pt solid colour.$linework ;
+}
+
+.juan figure > img {
+    max-height: 100%;
+}
+
+.juan ul {
+    list-style-type: none;
+    padding-top: 1.2em;
+    margin: 0;
+    line-height: 150%;
+    letter-spacing: 0.2em;
+    background: repeating-linear-gradient(
+        270deg,
+        colour.$page-dark, colour.$page-dark 1.444em,
+        colour.$linework 1.444em, colour.$linework 1.5em
+    );
+}
+
+.juan ol {
+    list-style-type: cjk-decimal-spaced;
+    margin: 0;
+    padding-top: 0;
+    line-height: 150%;
+    letter-spacing: 0.2em;
+    background: repeating-linear-gradient(
+        270deg,
+        colour.$page-dark, colour.$page-dark 1.444em,
+        colour.$linework 1.444em, colour.$linework 1.5em
+    );
+}
+
+.juan .judou {
+    position: relative;
+    margin-inline-start: -1.2em;
+    left: 0.65em;
+    top: 0.45em;
+    color: colour.$red;
+}
+
+.kinghwa-loaded .juan .judou {
+    left: 0.35em;
+    top: 0.65em
+}
+
+.juan .small {
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    position: relative;
+    margin-bottom: 0.2em;
+    margin-top: -0.2em;
+}
+
+.juan .blank {
+    border-left: 1.2pt solid colour.$linework;
+}
+
+.juan .speechmark {
+    position: relative;
+    margin-inline-start: -0.35em;
+    margin-inline-end: -0.35em;
+    color: colour.$red;
+}
+
+.kinghwa-loaded .juan .speechmark {
+    margin-inline-start: -0.55em;
+    margin-inline-end: -0.65em;
+}
+
+.juan .speechmark.start {
+    left: 0.25em
+}
+
+.juan .speechmark.end {
+    right: 0.2em;
+    top: -0.12em;
+}
+
+.juan .black {
+    background-color: colour.$txt-standard;
+    color: colour.$page;
+    border-radius: 0.05em;
+    box-shadow: 0 -0.1em 0 0.1em colour.$txt-standard;
+}
+
+.juan u {
+    text-decoration: underline solid colour.$red;
+}
+
+/*破坏矣
+
+是用于仿ctext之格式*/
+
+.juan span.inlay1 {
+    font-size: 15pt;
+    color: colour.$txt-standard;
+}
+
+.juan span.inlay1 .black, .juan span.inlay2 .black {
+    background-color: colour.$main;
+    box-shadow: 0 -0.1em 0 0.1em colour.$main;
+}
+
+.juan span.inlay2 {
+    font-size: 15pt;
+    color: colour.$main;
+    letter-spacing: 0.15em;
+}
+
+.juan span.inlay1 .speechmark, .juan span.inlay2 .speechmark {
+    margin-inline-start: -0.3em;
+    margin-inline-end: -0.3em;
+}
+
+.kinghwa-loaded .juan span.inlay1 .speechmark, .kinghwa-loaded .juan span.inlay2 .speechmark {
+    margin-inline-start: -0.45em;
+    margin-inline-end: -0.6em;
+}
+
+.juan span.number {
+    font-size: 15pt;
+    display: inline;
+    color: colour.$page;
+    background-color: colour.$main;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    padding-top: 0.2em;
+    margin-top: -0.2em;
+    margin-bottom: 0.2em;
+    letter-spacing: 0;
+    border-radius: 0.2em;
+}
+/* #endregion */
+
+/* #region flex juanku list items */
+
+div.juanku {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1em;
+    justify-content: left;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.juanku > div {
+    background-color: #d8d8c3;
+    writing-mode: vertical-rl;
+    letter-spacing: .1em;
+    padding: 0.75em 0.5em 0.75em 0.5em;
+    border-top: 1px solid colour.$main;
+    border-bottom: 1px solid colour.$main;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+    /* fontsi */
+}
+
+/* #endregion */
+
+/* #region Special decoration stuff */
+
+.cbox header::before {
+    content: ""; position: absolute;
+    top: 0; bottom: 0; right: 1.5em;
+    border-left: 1pt solid colour.$main;
+}
+
+.cbox header::after {
+    content: ""; position: absolute;
+    top: 0; bottom: 0; left: 1.5em;
+    border-left: 1pt solid colour.$main;
+}
+
+/* #endregion */
+
+.return-button {
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    padding: 0.5em;
+    background: rgba(34, 34, 34, 0.2);
+    border: none;
+    border-radius: 0.2em;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14pt;
+    writing-mode: horizontal-tb;
+    transition: background 0.2s;
+    font-family: font.$classical;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        overflow-y: hidden;
+    }
+
+    body {
+        position: relative;
+    }
+
+    .return-button {
+        bottom: unset;
+        top: calc(95vh - 4em);
+        left: 1em;
+    }
+
+    .cbox {
+        height: calc(90vh - 0.5em);
+        max-height: 36.2em;
+    }
+}

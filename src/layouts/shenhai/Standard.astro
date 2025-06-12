@@ -1,0 +1,38 @@
+---
+import ShHeader from "../../components/ShHeader.astro";
+import "../../styles/shenhai/global.scss";
+
+// title: main page title
+// displayTitle: main title to display in header, if this isn't set, there's no header
+// footerLine1: first line of footer
+// footerLine2: second line of footer
+// seal: place seal if exists/true
+// sealOffset: distance from bottom
+const {frontmatter} = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="shortcut icon" href="/icon.png" type="image/png">
+        <script src="/shenhai/shenhai-arrange.js" defer></script>
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <div class="cbox">
+            {frontmatter.displayTitle && (
+                <ShHeader text={frontmatter.displayTitle}
+                          footerLine1={frontmatter.footerLine1}
+                          footerLine2={frontmatter.footerLine2}
+                          seal={frontmatter.seal}
+                          sealOffset={frontmatter.sealOffset || "5.5em"} />
+            )}
+
+            <slot />
+
+        </div>
+    </body>
+
+</html>

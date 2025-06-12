@@ -1,0 +1,28 @@
+---
+import "../styles/shenhai/global.scss"
+// footerLine: string what goes in footer 
+// seal: if present, put the seal on
+// seal offset: distance from bottom
+const { 
+    text, 
+    footerLine1, 
+    footerLine2, 
+    seal,
+    sealOffset = "5.5em"
+    } = Astro.props
+---
+<header>
+    <h1>{text}</h1>
+
+    { 
+        seal && <img src="/shenhai/seal.webp" 
+                     alt="Yanwenyan seal" 
+                     class="seal" 
+                     style={`bottom: ${sealOffset};`} /> 
+    }
+
+    <div class="header-footer">
+        <p>{footerLine1}</p>
+        <p>{footerLine2}</p>
+    </div>
+</header>
