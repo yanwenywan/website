@@ -32,16 +32,16 @@ const { Content } = await entry.render();
 <BookChapter frontmatter={frontmatter}>
   <ShList>
     <div>
-      <a href="../">反</a>
+      <a href="../../">反</a>
     </div>
     {prev && (
         <div>
-            <a href={`./${prev.slug}`}>右</a>
+            <a href={`../${prev.slug}/`}>右</a>
         </div>
     )}
     {next && (
     <div>
-        <a href={`./${next.slug}`}>左</a>
+        <a href={`../${next.slug}/`}>左</a>
     </div>
     )}
   </ShList>

@@ -25,7 +25,7 @@ const { title, prev, next } = Astro.props;
     </head>
     <body>
         <p class="subheading">
-            <a href="../">Back</a>
+            <a href="../../">Back</a>
         </p>
 
         <div class="chapter-box">
@@ -36,17 +36,17 @@ const { title, prev, next } = Astro.props;
                 {
                     prev ? (
                         <p>
-                            <a href={`./${prev}`}>Back</a>
+                            <a href={`../${prev}/`}>Back</a>
                         </p>
                     ) : (
                         <span />
                     )
                 }
-                <p class="centre"><a href="../">Home</a></p>
+                <p class="centre"><a href="../../">Home</a></p>
                 {
                     next ? (
                         <p class="right">
-                            <a href={`./${next}`}>Next</a>
+                            <a href={`../${next}/`}>Next</a>
                         </p>
                     ) : (
                         <span />

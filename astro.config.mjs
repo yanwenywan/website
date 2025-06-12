@@ -8,4 +8,5 @@ export default defineConfig({
     integrations: [
         mdx()
     ],
+    trailingSlash: "always"
 });

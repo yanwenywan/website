@@ -20,7 +20,7 @@ const { title, prev, next, index } = Astro.props;
             cn.numberToChineseOrdinal(index)
         }章</h1>
         <p class="subheading">
-            <a href="../">目录</a>
+            <a href="../../">目录</a>
         </p>
 
         <div class="chapter-box">
@@ -31,17 +31,17 @@ const { title, prev, next, index } = Astro.props;
                 {
                     prev ? (
                         <p style="text-indent: 0;">
-                            <a href={`./${prev}`}>上一章</a>
+                            <a href={`../${prev}/`}>上一章</a>
                         </p>
                     ) : (
                         <span />
                     )
                 }
-                <p class="centre"><a href="../">目录</a></p>
+                <p class="centre"><a href="../../">目录</a></p>
                 {
                     next ? (
                         <p class="right">
-                            <a href={`./${next}`}>下一章</a>
+                            <a href={`../${next}/`}>下一章</a>
                         </p>
                     ) : (
                         <span />

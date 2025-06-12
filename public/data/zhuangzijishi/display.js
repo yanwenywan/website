@@ -129,14 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!chapter) {
         const shouldGoBack = confirm("君未言其章數，吾愧不能效，請回再求。");
-        if (shouldGoBack) window.location.href = "../";
+        if (shouldGoBack) window.location.href = "../../";
         return;
     }
 
     const chapterNum = parseInt(chapter, 10);
     if (isNaN(chapterNum) || chapterNum < 1 || chapterNum > 30) {
         const shouldGoBack = confirm("君章數差矣，本書止有三十篇，必一至三十也，請回再求。");
-        if (shouldGoBack) window.location.href = "../";
+        if (shouldGoBack) window.location.href = "../../";
         return;
     }
 
@@ -203,7 +203,7 @@ function populateButtons() {
     });
 
     btnBack = createButton('返回', () => {
-        window.location.href = '../';
+        window.location.href = '../../';
     });
 
     btnNext = createButton('下句', () => {
