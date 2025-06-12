@@ -149,7 +149,7 @@ function punctuate(text) {
         return `<span class="small">${p1}</span>`;
     });
     let titled = commented
-        .replace(/《(.*?)》/g, '<span style="text-decoration: underline wavy var(--mutedred);">$1</span>')
+        .replace(/《(.*?)》/g, '<span class="book-title">$1</span>')
         .replace(/\\([《〔（「『].*?[』」）〕》])/g, "$1");
     return titled
 }
