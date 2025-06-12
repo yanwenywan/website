@@ -15,5 +15,14 @@ export const collections = {
             footerLine1: z.string(),
             footerLine2: z.string()
         })
+    }),
+    "shiji-chapters": defineCollection({
+        schema: z.object({
+            title: z.string(),
+            displayTitle: z.string(),
+            seal: z.boolean(),
+            footerLine1: z.string(),
+            footerLine2: z.string()
+        })
     })
 }

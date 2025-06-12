@@ -1,0 +1,65 @@
+---
+import "../../../styles/shenhai/book-images.scss";
+import { getCollection, getEntry } from 'astro:content';
+import ShJuan      from "../../../components/ShJuan.astro";
+import ShList      from "../../../components/ShList.astro";
+import BookChapter from "../../../layouts/shenhai/BookChapter.astro";
+
+export async function getStaticPaths() {
+  const chapters = await getCollection("shiji-chapters");
+  return chapters.map((c) => ({ params: { slug: c.slug } }));
+}
+
+const { params } = Astro;
+const entry:any = await getEntry("shiji-chapters", params.slug);
+
+const frontmatter = {
+  title:        entry.data.title,
+  displayTitle: entry.data.displayTitle,
+  footerLine1:  entry.data.footerLine1,
+  footerLine2:  entry.data.footerLine2,
+  seal:         entry.data.seal
+};
+
+const chapters = await getCollection("shiji-chapters");
+chapters.sort((a, b) => Number(a.slug) - Number(b.slug));
+const idx  = chapters.findIndex((c) => c.slug === params.slug);
+const prev = idx > 0                   ? chapters[idx - 1] : null;
+const next = idx < chapters.length - 1 ? chapters[idx + 1] : null;
+
+const { Content } = await entry.render();
+---
+<BookChapter frontmatter={frontmatter}>
+  <ShList>
+    <div>
+      <a href="../">反</a>
+    </div>
+    {prev && (
+        <div>
+            <a href={`./${prev.slug}`}>右</a>
+        </div>
+    )}
+    {next && (
+    <div>
+        <a href={`./${next.slug}`}>左</a>
+    </div>
+    )}
+  </ShList>
+
+  <ShJuan>
+    <Content />
+  </ShJuan>
+</BookChapter>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('p').forEach(p => {
+        const imgs = p.querySelectorAll('img');
+        if (imgs.length) {
+          const figure = document.createElement('figure');
+          imgs.forEach(img => figure.appendChild(img));
+          p.replaceWith(figure);
+        }
+      });
+    });
+    </script>
+    

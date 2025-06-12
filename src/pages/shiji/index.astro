@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import ShJuan    from '../../components/ShJuan.astro';
+import Standard  from '../../layouts/shenhai/Standard.astro';
+
+const chapters = await getCollection('shiji-chapters');
+chapters.sort((a, b) => Number(a.slug) - Number(b.slug));
+
+const frontmatter = {
+  title:        '史記',
+  displayTitle: '史記三家注',
+  footerLine1:  '漢 司馬遷',
+  footerLine2:  '唐 司馬貞張守節',
+  seal:         false
+};
+---
+<Standard frontmatter={frontmatter}>
+  <ShJuan>
+    <h2>
+      目录
+     </h2>
+     <p>
+      漢司馬遷史記三家注原文自<a href="https://ctext.org/wiki.pl?if=gb&amp;res=384378">中國哲學網</a>爲重排版以豎排本書自字符識别而後人改而成又轉以爲不同排版故或有不和者請見諒<br><a href="/">※返回主页</a>
+     </p>
+    <ul>
+      {chapters.map(({ slug, data }) => (
+        <li>
+          <a href={`./chapter/${slug}`}>
+            {data.displayTitle}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </ShJuan>
+</Standard>
