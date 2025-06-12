@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import ShJuan    from '../../components/ShJuan.astro';
+import Standard  from '../../layouts/shenhai/Standard.astro';
+
+const chapters = await getCollection('fengshen-chapters');
+chapters.sort((a, b) => Number(a.slug) - Number(b.slug));
+
+const frontmatter = {
+  title:        '封神演义',
+  displayTitle: '封神演義',
+  footerLine1:  '【明】',
+  footerLine2:  '许仲林',
+  seal:         false
+};
+---
+<Standard frontmatter={frontmatter}>
+  <ShJuan>
+    <h2>目录</h2>
+    <p>
+      明代许仲林作《封神演义》共百回自电子书改为网上竖排之版。本人非版权所有者请见版权信息。若有所犯敬请联系。&#x3000;<a href="/">※返回主页</a>
+    </p>
+    <ul>
+      {chapters.map(({ slug, data }) => (
+        <li>
+          <a href={`./story/${slug}`}>
+            {data.displayTitle}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </ShJuan>
+</Standard>

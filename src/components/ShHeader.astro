@@ -3,16 +3,19 @@ import "../styles/shenhai/global.scss"
 // footerLine: string what goes in footer 
 // seal: if present, put the seal on
 // seal offset: distance from bottom
+// h2: whether or not to use h2
 const { 
     text, 
     footerLine1, 
     footerLine2, 
     seal,
-    sealOffset = "5.5em"
+    sealOffset = "5.5em",
+    h2
     } = Astro.props
 ---
 <header>
-    <h1>{text}</h1>
+    {!h2 && <h1>{text}</h1>}
+    {h2 && <h2>{text}</h2>}
 
     { 
         seal && <img src="/shenhai/seal.webp" 

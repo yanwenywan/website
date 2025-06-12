@@ -1,0 +1,31 @@
+---
+import ShHeader from "../../components/ShHeader.astro";
+import "../../styles/shenhai/global.scss";
+
+// title: main page title
+// displayTitle: main title to display in header, if this isn't set, there's no header
+const {frontmatter} = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="shortcut icon" href="/icon.png" type="image/png">
+        <script src="/shenhai/shenhai-arrange.js" defer></script>
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <div class="cbox">
+            {frontmatter.displayTitle && (
+                <ShHeader text={frontmatter.displayTitle}
+                          h2 />
+            )}
+
+            <slot />
+
+        </div>
+    </body>
+
+</html>

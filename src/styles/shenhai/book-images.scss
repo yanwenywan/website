@@ -1,0 +1,11 @@
+@use "../colour.scss";
+
+img {
+    mix-blend-mode: multiply;
+    // padding-left: 0.3em;
+    // border-left: 1.2pt solid colour.$linework;
+}
+
+.juan p:has(img) {
+    background: none;
+  }
