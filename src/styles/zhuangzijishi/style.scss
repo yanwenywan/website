@@ -1,0 +1,166 @@
+@use "../colour.scss";
+@use "../font.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Jersey+10&display=swap');
+
+
+body {
+    background-color: #dddddd;
+    color: #222222;
+    /* font-family: Gelasio, 'Noto Serif SC', serif; */
+    font-family: 'Lora', font.$classical;
+    font-size: 14pt;
+    line-height: 1.8;
+    /* display: flex; */
+}
+.cbox {
+    display: block;
+    align-self: center;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 90%;
+    /* flex-direction: column; */
+}
+
+div.cbox {
+    box-shadow: 0px 0px 5px 3px rgba(31, 73, 31, 0.15);
+    padding: 20px;
+    min-height: 102vh;
+    margin-top: -15px;
+}
+
+ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30pt;
+}
+
+@media (max-width: 600px) {
+    ol {
+        grid-template-columns: 1fr;
+    }
+}
+
+.double {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    /* grid-template-columns: 1fr 1fr; */
+    /* column-gap: 30px; */
+    width: 90%;
+    /* background:linear-gradient(colour.$main,colour.$main) center/1px 100% no-repeat; */
+    background-color: colour.$page-dark;
+    padding: 60px;
+    border-left: 1px solid colour.$main;
+    border-right: 1px solid colour.$main;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+}
+
+.double.thin {
+    max-width: 760px;
+    width: 85%;
+}
+
+.double > div {
+    display: block;
+}
+
+.double > div.threecol {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Manrope, sans-serif;
+}
+
+h2 {
+    font-family: Manrope, sans-serif;
+}
+
+p.small {
+    font-size: 10pt;
+}
+
+p.centre {
+    text-align: center;
+}
+
+x-centre {
+    text-align: center;
+    display: block;
+}
+
+p.right {
+    text-align: right;
+}
+
+p.subheading {
+    text-align: center;
+    font-style: italic;
+    font-family: Manrope, 'Noto Serif SC';
+    /* letter-spacing: 0.2pt; */
+}
+
+span.grey {
+    color: gray;
+}
+
+a {
+    color: colour.$main;
+    text-decoration: none;
+}
+
+a:hover:not(.nav) {
+    color: crimson;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: colour.$main-light;
+}
+
+
+
+
+
+@media (max-width: 1100px) {
+    .double {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .double {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .double {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .double {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .double {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

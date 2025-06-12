@@ -1,0 +1,38 @@
+---
+import "../../../styles/zhuangzijishi/style.scss";
+import "../../../styles/zhuangzijishi/reader.scss";
+
+export async function getStaticPaths() {
+  return Array.from({ length: 30 }, (_, i) => ({
+    params: { chapter: String(i + 1) }
+  }));
+}
+
+const { chapter } = Astro.params;
+---
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>莊子 第{chapter} 篇</title>
+    <!-- your global CSS etc. -->
+  </head>
+  <body>
+    <div class="ccontainer">
+      <div class="maintext" id="maintext">
+        <p>此處無銀三百兩</p>
+      </div>
+      <div class="commentary" id="commentary">
+        <p>若君未言其章，何以所示？</p>
+      </div>
+    </div>
+    <div class="floaters" id="floaters">
+      <!-- buttons get injected by your JS -->
+    </div>
+
+    <!-- hydrate your existing script on load -->
+    <script type="module" src="/data/zhuangzijishi/display.js"></script>
+  </body>
+
+</html>
