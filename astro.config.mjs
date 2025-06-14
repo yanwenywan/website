@@ -8,5 +8,8 @@ export default defineConfig({
     integrations: [
         mdx()
     ],
-    trailingSlash: "always"
+    trailingSlash: "always",
+    redirects: {
+        '/dagengren/story/[slug].html': '/dagengren/story/[slug]/',
+    },
 });
