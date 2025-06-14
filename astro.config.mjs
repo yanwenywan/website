@@ -9,7 +9,4 @@ export default defineConfig({
         mdx()
     ],
     trailingSlash: "always",
-    redirects: {
-        '/dagengren/story/[slug].html': '/dagengren/story/[slug]/',
-    },
 });

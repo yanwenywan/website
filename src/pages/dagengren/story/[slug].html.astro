@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("dagengren-chapters");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="refresh" content={`0;url=/dagengren/story/${slug}/`} />
+    <link rel="canonical" href={`/dagengren/story/${slug}/`} />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href={`/dagengren/story/${slug}/`}>/dagengren/story/{slug}/</a></p>
+  </body>
+</html>
