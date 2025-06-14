@@ -24,3 +24,7 @@ pnpm-debug.log*
 .idea/
 
 scripts/
+.vscode/settings.json
+_rss/
+*.code-workspace
+jsconfig.json
