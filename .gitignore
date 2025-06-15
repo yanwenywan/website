@@ -28,3 +28,4 @@ scripts/
 _rss/
 *.code-workspace
 jsconfig.json
+src/content/dagengren-chapters/_*.md
