@@ -2,7 +2,10 @@ import { z, defineCollection } from "astro:content";
 
 export const collections = {
     "dagengren-chapters": defineCollection({
-        schema: z.object({})  // as no frontmatter
+        schema: z.object({
+            pubDate: z.date(),
+            chapter: z.string()
+        })  
     }),
     "baoyu-chapters": defineCollection({
         schema: z.object({})

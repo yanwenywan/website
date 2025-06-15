@@ -16,21 +16,23 @@ export async function GET() {
         const title = raw.includes('. ') ? raw.split('. ').slice(1).join('. ') : raw;
         // You could extract a date from frontmatter if available; else use now()
         // @ts-ignore
+        const volumeData = data.chapter ?? "";
         const pubDate = (data.pubDate ?? new Date()).toUTCString();
         // …inside your .map over chapters…
         const link = `${SITE.origin}/dagengren/story/${slug}`
         const guidLink =
             Number(slug) <= 482
                 ? `${link}.html`    // keep “.html” for chapters 1–482
-                : link;             // no “.html” for newer ones
+                : link + "/";             // no “.html” for newer ones
 
         return `
     <item>
-      <title>${title}</title>
+      <title>${volumeData}: ${title}</title>
       <link>${link}</link>
-      <description>Chapter ${slug}</description>
+      <description>${volumeData}</description>
       <pubDate>${pubDate}</pubDate>
       <guid isPermaLink="true">${guidLink}</guid>
+      <category><![CDATA[Nightwatcher]]></category>
     </item>`
     }));
 
