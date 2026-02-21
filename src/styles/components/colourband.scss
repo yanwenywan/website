@@ -1,0 +1,13 @@
+@use "../colour.scss";
+@use "../font.scss";
+
+.colourband {
+    background-color: colour.$main;
+    color: colour.$band-txt;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: sticky;
+    position: -webkit-sticky;
+    left: 0;
+    text-align: center;
+}

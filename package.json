@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
-    "astro": "^5.9.2",
+    "@astrojs/mdx": "^4.3.13",
+    "astro": "^5.17.3",
     "chinese-numbering": "^1.0.0",
     "sass": "^1.89.2"
   }

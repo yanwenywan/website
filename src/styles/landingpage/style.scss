@@ -5,11 +5,11 @@ body {
     background-color: colour.$bg-standard;
     color: colour.$txt-standard;
     font-family: font.$landing;
-    font-size: 12pt;
+    font-size: 13pt;
 }
 
 .cbox {
-    display: flex;
+    display: block;
     align-self: center;
     margin: 0 auto;
     max-width: 840px;

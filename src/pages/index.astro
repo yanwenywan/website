@@ -1,5 +1,7 @@
 ---
 import "../styles/landingpage/style.scss"
+import ColourBand from "../components/ColourBand.astro"
+import ShList from "../components/ShList.astro"
 ---
 
 <html lang="en">
@@ -10,8 +12,11 @@ import "../styles/landingpage/style.scss"
 		<title>Yanwenyuan.uk</title>
 		<link rel="icon" type="image/png" href="/icon.png" />
 	</head>
+	
 	<body>
 		<div class="cbox">
+			<ColourBand></ColourBand>
+
 			<h1>
 				<img
 					src="/ywy-full-compressed.svg"
@@ -23,12 +28,19 @@ import "../styles/landingpage/style.scss"
 			<p style="text-align: center; margin-top: -1.2em;">Yanwenyuan</p>
 
 			<p>
-				君访陋院，燕某欢甚。本页者，录也，存吾燕某之作，又收他书，同可通友方。<br
-				/>
-				(This is a Landing Page for Yan and others' works)
+				山上燕文院，閑書收集之處。陋頁存敝人燕某之作，亦收他書，再通友院。
 			</p>
 
-			<h3>作 Creations</h3>
+			<p>
+				This is a landing page works by or collected by Yan. Most pages are in Chinese or Classical Chinese.
+			</p>
+
+			<ColourBand></ColourBand>
+
+			<h2>
+				<span class="title-icons icon-make" aria-hidden="true"></span>
+				Creations
+			</h2>
 
 			<ul>
 				<li>
@@ -41,7 +53,10 @@ import "../styles/landingpage/style.scss"
 				</li>
 			</ul>
 
-			<h3>译 Translations</h3>
+			<h2>
+				<span class="title-icons icon-translate" aria-hidden="true"></span>
+				Translations
+			</h2>
 
 			<ul>
 				<li>
@@ -51,8 +66,11 @@ import "../styles/landingpage/style.scss"
 				</li>
 			</ul>
 
-			<h3>随意收罗的书籍</h3>
-
+			<h2>
+				<span class="title-icons icon-book" aria-hidden="true"></span>
+				随意收罗的书籍
+			</h2>
+			
 			<ul>
 				<li>
 					<a href="fengshen/">封神演义【明】许仲林</a>（简）
@@ -71,7 +89,10 @@ import "../styles/landingpage/style.scss"
 				</li>
 			</ul>
 
-			<h3>友院</h3>
+			<h2>
+				<span class="title-icons icon-friend" aria-hidden="true"></span>
+				友院
+			</h2>
 
 			<ul>
 				<li>
@@ -89,4 +110,44 @@ import "../styles/landingpage/style.scss"
         </footer>
 		</div>
 	</body>
+
+	<style>
+		.title-icons {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			margin-bottom: 0px;
+			vertical-align: middle;
+
+			background-color: #3a6342;
+
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			-webkit-mask-size: contain;
+
+			mask-repeat: no-repeat;
+			mask-position: center;
+			mask-size: contain;
+		}
+
+		.icon-make {
+			-webkit-mask-image: url("/assets/make.png");
+			mask-image: url("/assets/make.png");
+		}
+
+		.icon-translate {
+			-webkit-mask-image: url("/assets/translate.png");
+			mask-image: url("/assets/translate.png");
+		}
+
+		.icon-book {
+			-webkit-mask-image: url("/assets/book.png");
+			mask-image: url("/assets/book.png");
+		}
+
+		.icon-friend {
+			-webkit-mask-image: url("/assets/friend.png");
+			mask-image: url("/assets/friend.png");
+		}
+	</style>
 </html>
