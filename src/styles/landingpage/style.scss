@@ -1,6 +1,10 @@
 @use "../colour.scss";
 @use "../font.scss";
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: colour.$bg-standard;
     color: colour.$txt-standard;
