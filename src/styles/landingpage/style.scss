@@ -12,7 +12,12 @@ body {
 
 .hero {
     width: 100%;
-    background: linear-gradient(to bottom, colour.$main, 75%, colour.$bg-standard);
+    background: linear-gradient(
+        to bottom,
+        colour.$main,
+        75%,
+        colour.$bg-standard
+    );
     padding: 5rem 1rem 2rem;
     text-align: center;
 }
@@ -56,7 +61,9 @@ body {
     font-size: 0.95rem;
     line-height: 1.75;
 
-    p { margin: 0.25rem 0; }
+    p {
+        margin: 0.25rem 0;
+    }
 }
 
 .landing-band {
@@ -84,7 +91,8 @@ a:visited {
     color: darkslategray;
 }
 
-a:hover, a:hover:visited {
+a:hover,
+a:hover:visited {
     color: crimson;
     text-decoration: underline;
 }
@@ -124,10 +132,22 @@ h2 {
     mask-size: contain;
 }
 
-.icon-make      { -webkit-mask-image: url("/assets/make.png");      mask-image: url("/assets/make.png"); }
-.icon-translate { -webkit-mask-image: url("/assets/translate.png"); mask-image: url("/assets/translate.png"); }
-.icon-book      { -webkit-mask-image: url("/assets/book.png");      mask-image: url("/assets/book.png"); }
-.icon-friend    { -webkit-mask-image: url("/assets/friend.png");    mask-image: url("/assets/friend.png"); }
+.icon-make {
+    -webkit-mask-image: url("/assets/make.png");
+    mask-image: url("/assets/make.png");
+}
+.icon-translate {
+    -webkit-mask-image: url("/assets/translate.png");
+    mask-image: url("/assets/translate.png");
+}
+.icon-book {
+    -webkit-mask-image: url("/assets/book.png");
+    mask-image: url("/assets/book.png");
+}
+.icon-friend {
+    -webkit-mask-image: url("/assets/friend.png");
+    mask-image: url("/assets/friend.png");
+}
 
 .section-divider {
     border: none;
@@ -145,6 +165,52 @@ ul {
 li {
     border-left: 2px solid colour.$main;
     padding: 0.3rem 0 0.3rem 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.lang-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: font.$story-header;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding: 0.15em 0.55em;
+    border-radius: 999px;
+    color: colour.$band-txt;
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+.lang-en {
+    background-color: #5a6a7a;
+}
+.lang-en::before {
+    content: "EN";
+    letter-spacing: 0.06em;
+    padding-left: 0.06em; // compensate trailing letter-spacing gap
+}
+.lang-bai {
+    background-color: #8a6535;
+}
+.lang-bai::before {
+    content: "白";
+}
+.lang-wen {
+    background-color: #2d4270;
+}
+.lang-wen::before {
+    content: "文";
+}
+.lang-art {
+    background-color: #8b3535;
+}
+.lang-art::before {
+    font-size: 1.1em;
+    content: "❀";
 }
 
 p.small {

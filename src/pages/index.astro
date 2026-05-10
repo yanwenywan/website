@@ -1,5 +1,9 @@
 ---
 import "../styles/landingpage/style.scss"
+import Eng from "../components/landing/Eng.astro"
+import Baihua from "../components/landing/Baihua.astro"
+import Wenyan from "../components/landing/Wenyan.astro"
+import Special from "../components/landing/Special.astro"
 ---
 
 <html lang="en">
@@ -20,7 +24,8 @@ import "../styles/landingpage/style.scss"
 				</div>
 				<div class="hero-prose">
 				    <p>僻山上有燕文院，瘋老道人居焉。好畵天龍異獸，喜收鬼怪志說。自有所作。收有他作。便偶有之遊者之覽也。</p>
-					<p>Works by or collected by Yan of Yanwenyuan. This site contains English, Chinese, and Classical Chinese content.</p>
+					<p>Works by or collected by Yan of Yanwenyuan. This is a landing page to different subsites, and contains English, Chinese, and Classical Chinese content.</p>
+					<p><i>Icons:</i> <Eng/> <Baihua/> <Wenyan/> <Special/> <i>for English; Modern Chinese; Classial Chinese; and special links.</i></p>
 				</div>
 			</div>
 		</div>
@@ -35,9 +40,9 @@ import "../styles/landingpage/style.scss"
 				Creations
 			</h2>
 			<ul>
-			    <li><a href="https://art.yanwenyuan.uk">燕文畵舘：Artworks Site</a> (external subsite)</li>
-				<li><a href="baoyu/">暴雨中：In Torrential Rains</a> (一篇玄幻故事；进行中)</li>
-				<li><a href="shenhai/">神海大作集：Collections from the Celestial Sea</a>（竖排繁体文言短篇小说）</li>
+			    <li><Special/> <a href="https://art.yanwenyuan.uk">燕文畵舘：Artworks Site</a> (external subsite)</li>
+				<li><Baihua/> <a href="baoyu/">暴雨中：In Torrential Rains</a> (一篇玄幻故事；进行中)</li>
+				<li><Wenyan/> <a href="shenhai/">神海大作集：Collections from the Celestial Sea</a>（竖排繁体文言短篇小说）</li>
 			</ul>
 
 			<hr class="section-divider" />
@@ -49,7 +54,7 @@ import "../styles/landingpage/style.scss"
 				Translations
 			</h2>
 			<ul>
-				<li><a href="dagengren/">大奉打更人：The Nightwatchers of Feng by 卖报小郞君</a> (ongoing, English translation)</li>
+				<li><Eng/> <a href="dagengren/">大奉打更人：The Nightwatchers of Feng by 卖报小郞君</a> (ongoing, English translation)</li>
 			</ul>
 
 			<hr class="section-divider" />
@@ -61,11 +66,11 @@ import "../styles/landingpage/style.scss"
 				随意收罗的书籍
 			</h2>
 			<ul>
-				<li><a href="fengshen/">封神演义【明】许仲林</a>（简）</li>
-				<li><a href="shiji/">史記三家注【漢】司馬遷</a></li>
-				<li><a href="shishuo/">師說【唐】韓愈</a></li>
-				<li><a href="jimengyaojue/">擊蒙要訣【清】李珥；自《栗谷先生全書》</a></li>
-				<li><a href="/zhuangzijishi/">莊子集釋【清】郭慶藩（特殊排版）</a></li>
+				<li><Wenyan/> <a href="fengshen/">封神演义【明】许仲林</a>（简）</li>
+				<li><Wenyan/> <a href="shiji/">史記三家注【漢】司馬遷</a></li>
+				<li><Wenyan/> <a href="shishuo/">師說【唐】韓愈</a></li>
+				<li><Wenyan/> <a href="jimengyaojue/">擊蒙要訣【清】李珥；自《栗谷先生全書》</a></li>
+				<li><Wenyan/> <a href="/zhuangzijishi/">莊子集釋【清】郭慶藩（特殊排版）</a></li>
 			</ul>
 
 			<hr class="section-divider" />
