@@ -1,7 +1,5 @@
 ---
 import "../styles/landingpage/style.scss"
-import ColourBand from "../components/ColourBand.astro"
-import ShList from "../components/ShList.astro"
 ---
 
 <html lang="en">
@@ -12,142 +10,80 @@ import ShList from "../components/ShList.astro"
 		<title>Yanwenyuan.uk</title>
 		<link rel="icon" type="image/png" href="/icon.png" />
 	</head>
-	
+
 	<body>
+		<div class="hero">
+			<div class="hero-inner">
+				<div class="hero-scroll">
+					<img src="/ywy-full-compressed.svg" alt="燕文院" class="hero-logo" />
+				<p class="hero-title">YANWENYUAN</p>
+				</div>
+				<div class="hero-prose">
+					<p>山上燕文院，閑書收集之處。陋頁存敝人燕某之作，亦收他書，再通友院。</p>
+					<p>Works by or collected by Yan. Most pages are in Chinese or Classical Chinese.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="landing-band"></div>
+
 		<div class="cbox">
-			<ColourBand></ColourBand>
-
-			<h1>
-				<img
-					src="/ywy-full-compressed.svg"
-					alt="燕文院"
-					style="max-width: 240px; margin-bottom: -20px;"
-				/>
-			</h1>
-
-			<p style="text-align: center; margin-top: -1.2em;">Yanwenyuan</p>
-
-			<p>
-				山上燕文院，閑書收集之處。陋頁存敝人燕某之作，亦收他書，再通友院。
-			</p>
-
-			<p>
-				This is a landing page works by or collected by Yan. Most pages are in Chinese or Classical Chinese.
-			</p>
-
-			<ColourBand></ColourBand>
-
 			<h2>
-				<span class="title-icons icon-make" aria-hidden="true"></span>
+				<div class="icon-badge">
+					<span class="title-icons icon-make" aria-hidden="true"></span>
+				</div>
 				Creations
 			</h2>
-
 			<ul>
-				<li>
-					<a href="baoyu/">暴雨中：In Torrential Rains</a> (一篇玄幻故事；进行中)
-				</li>
-				<li>
-					<a href="shenhai/"
-						>神海大作集：Collections from the Celestial Sea</a
-					>（竖排繁体文言短篇小说）
-				</li>
+			    <li><a href="https://art.yanwenyuan.uk">燕文畵舘：Artworks Site</a> (external subsite)</li>
+				<li><a href="baoyu/">暴雨中：In Torrential Rains</a> (一篇玄幻故事；进行中)</li>
+				<li><a href="shenhai/">神海大作集：Collections from the Celestial Sea</a>（竖排繁体文言短篇小说）</li>
 			</ul>
 
+			<hr class="section-divider" />
+
 			<h2>
-				<span class="title-icons icon-translate" aria-hidden="true"></span>
+				<div class="icon-badge">
+					<span class="title-icons icon-translate" aria-hidden="true"></span>
+				</div>
 				Translations
 			</h2>
-
 			<ul>
-				<li>
-					<a href="dagengren/"
-						>大奉打更人：The Nightwatchers of Feng by 卖报小郞君</a
-					> (ongoing, English translation)
-				</li>
+				<li><a href="dagengren/">大奉打更人：The Nightwatchers of Feng by 卖报小郞君</a> (ongoing, English translation)</li>
 			</ul>
 
+			<hr class="section-divider" />
+
 			<h2>
-				<span class="title-icons icon-book" aria-hidden="true"></span>
+				<div class="icon-badge">
+					<span class="title-icons icon-book" aria-hidden="true"></span>
+				</div>
 				随意收罗的书籍
 			</h2>
-			
 			<ul>
-				<li>
-					<a href="fengshen/">封神演义【明】许仲林</a>（简）
-				</li>
-				<li>
-					<a href="shiji/">史記三家注【漢】司馬遷</a>
-				</li>
+				<li><a href="fengshen/">封神演义【明】许仲林</a>（简）</li>
+				<li><a href="shiji/">史記三家注【漢】司馬遷</a></li>
 				<li><a href="shishuo/">師說【唐】韓愈</a></li>
-				<li>
-					<a href="jimengyaojue/"
-						>擊蒙要訣【清】李珥；自《栗谷先生全書》</a>
-				</li>
-				<li>
-					<a href="/zhuangzijishi/"
-						>莊子集釋【清】郭慶藩（特殊排版）</a>
-				</li>
+				<li><a href="jimengyaojue/">擊蒙要訣【清】李珥；自《栗谷先生全書》</a></li>
+				<li><a href="/zhuangzijishi/">莊子集釋【清】郭慶藩（特殊排版）</a></li>
 			</ul>
 
+			<hr class="section-divider" />
+
 			<h2>
-				<span class="title-icons icon-friend" aria-hidden="true"></span>
+				<div class="icon-badge">
+					<span class="title-icons icon-friend" aria-hidden="true"></span>
+				</div>
 				友院
 			</h2>
-
 			<ul>
-				<li>
-					<a href="https://vistudium.top/">遠見齋</a> Hulenkius
-				</li>
+				<li><a href="https://vistudium.top/">遠見齋</a> Hulenkius</li>
 			</ul>
 
 			<footer>
-
-            <hr> 
-            <p class="small">
-				本网者由（Astro）所成，尝试之而颇好其理。全站燕某所设。
-            </p>
-
-        </footer>
+				<hr class="section-divider" />
+				<p class="small">This website is made in Astro. Designed by Yanwenyuan.</p>
+			</footer>
 		</div>
 	</body>
-
-	<style>
-		.title-icons {
-			display: inline-block;
-			width: 50px;
-			height: 50px;
-			margin-bottom: 0px;
-			vertical-align: middle;
-
-			background-color: #3a6342;
-
-			-webkit-mask-repeat: no-repeat;
-			-webkit-mask-position: center;
-			-webkit-mask-size: contain;
-
-			mask-repeat: no-repeat;
-			mask-position: center;
-			mask-size: contain;
-		}
-
-		.icon-make {
-			-webkit-mask-image: url("/assets/make.png");
-			mask-image: url("/assets/make.png");
-		}
-
-		.icon-translate {
-			-webkit-mask-image: url("/assets/translate.png");
-			mask-image: url("/assets/translate.png");
-		}
-
-		.icon-book {
-			-webkit-mask-image: url("/assets/book.png");
-			mask-image: url("/assets/book.png");
-		}
-
-		.icon-friend {
-			-webkit-mask-image: url("/assets/friend.png");
-			mask-image: url("/assets/friend.png");
-		}
-	</style>
 </html>
