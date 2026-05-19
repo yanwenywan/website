@@ -1,95 +1,165 @@
 ---
-import "../styles/landingpage/style.scss"
-import Eng from "../components/landing/Eng.astro"
-import Baihua from "../components/landing/Baihua.astro"
-import Wenyan from "../components/landing/Wenyan.astro"
-import Special from "../components/landing/Special.astro"
+import "../styles/landingpage/style.scss";
+import Eng from "../components/landing/Eng.astro";
+import Baihua from "../components/landing/Baihua.astro";
+import Wenyan from "../components/landing/Wenyan.astro";
+import Special from "../components/landing/Special.astro";
+import { Image } from "astro:assets";
+import headerCover from "./cover.png";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Yanwenyuan.uk</title>
-		<link rel="icon" type="image/png" href="/icon.png" />
-	</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yanwenyuan.uk</title>
+        <link rel="icon" type="image/png" href="/icon.png" />
+    </head>
 
-	<body>
-    	<div class="landing-band"></div>
-		<div class="hero">
-			<div class="hero-inner">
-				<div class="hero-scroll">
-					<img src="/ywy-full-compressed.svg" alt="燕文院" class="hero-logo" />
-				<p class="hero-title">YANWENYUAN</p>
-				</div>
-				<div class="hero-prose">
-				    <p>僻山上有燕文院，瘋老道人居焉。好畵天龍異獸，喜收鬼怪志說。自有所作。收有他作。便偶有之遊者之覽也。</p>
-					<p>Works by or collected by Yan of Yanwenyuan. This is a landing page to different subsites, and contains English, Chinese, and Classical Chinese content.</p>
-					<p><i>Icons:</i> <Eng/> <Baihua/> <Wenyan/> <Special/> <i>for English; Modern Chinese; Classial Chinese; and special links.</i></p>
-				</div>
-			</div>
-		</div>
+    <body>
+        <div class="landing-band"></div>
+        <div class="hero">
+            <Image
+                src={headerCover}
+                class="hero-bg"
+                aria-hidden="true"
+                alt="Shai Xuanhai (by Dauzito)"
+            />
+            <div class="hero-inner">
+                <div class="hero-scroll">
+                    <img
+                        src="/ywy-full-compressed.svg"
+                        alt="燕文院"
+                        class="hero-logo"
+                    />
+                    <p class="hero-title">YANWENYUAN</p>
+                </div>
+                <div class="hero-prose">
+                    <p>
+                        僻山上有燕文院，瘋老道人居焉。好畵天龍異獸，喜收鬼怪志說。自有所作。收有他作。便偶有之遊者之覽也。
+                    </p>
+                    <p>
+                        Works by or collected by Yan of Yanwenyuan. This is a
+                        landing page to different subsites, and contains
+                        English, Chinese, and Classical Chinese content.
+                    </p>
+                    <p>
+                        <i>Icons:</i>
+                        <Eng />
+                        <Baihua />
+                        <Wenyan />
+                        <Special />
+                        <i
+                            >for English; Modern Chinese; Classial Chinese; and
+                            special links.</i
+                        >
+                    </p>
+                </div>
+            </div>
+        </div>
 
-		<div class="landing-band"></div>
+        <div class="landing-band"></div>
 
-		<div class="cbox">
-			<h2>
-				<div class="icon-badge">
-					<span class="title-icons icon-make" aria-hidden="true"></span>
-				</div>
-				Creations
-			</h2>
-			<ul>
-			    <li><Special/> <a href="https://art.yanwenyuan.uk" target="_blank" rel="noopener noreferrer">燕文畵舘：Artworks Site</a> (external subsite)</li>
-				<li><Baihua/> <a href="baoyu/">暴雨中：In Torrential Rains</a> (一篇玄幻故事；进行中)</li>
-				<li><Wenyan/> <a href="shenhai/">神海大作集：Collections from the Celestial Sea</a>（竖排繁体文言短篇小说）</li>
-			</ul>
+        <div class="cbox">
+            <h2>
+                <div class="icon-badge">
+                    <span class="title-icons icon-make" aria-hidden="true"
+                    ></span>
+                </div>
+                Creations
+            </h2>
+            <ul>
+                <li>
+                    <Special />
+                    <a
+                        href="https://art.yanwenyuan.uk"
+                        target="_blank"
+                        rel="noopener noreferrer">燕文畵舘：Artworks Site</a
+                    > (external subsite)
+                </li>
+                <li>
+                    <Baihua />
+                    <a href="baoyu/">暴雨中：In Torrential Rains</a> (一篇玄幻故事；进行中)
+                </li>
+                <li>
+                    <Wenyan />
+                    <a href="shenhai/"
+                        >神海大作集：Collections from the Celestial Sea</a
+                    >（竖排繁体文言短篇小说）
+                </li>
+            </ul>
 
-			<hr class="section-divider" />
+            <hr class="section-divider" />
 
-			<h2>
-				<div class="icon-badge">
-					<span class="title-icons icon-translate" aria-hidden="true"></span>
-				</div>
-				Translations
-			</h2>
-			<ul>
-				<li><Eng/> <a href="dagengren/">大奉打更人：The Nightwatchers of Feng by 卖报小郞君</a> (ongoing, English translation)</li>
-			</ul>
+            <h2>
+                <div class="icon-badge">
+                    <span class="title-icons icon-translate" aria-hidden="true"
+                    ></span>
+                </div>
+                Translations
+            </h2>
+            <ul>
+                <li>
+                    <Eng />
+                    <a href="dagengren/"
+                        >大奉打更人：The Nightwatchers of Feng by 卖报小郞君</a
+                    > (ongoing, English translation)
+                </li>
+            </ul>
 
-			<hr class="section-divider" />
+            <hr class="section-divider" />
 
-			<h2>
-				<div class="icon-badge">
-					<span class="title-icons icon-book" aria-hidden="true"></span>
-				</div>
-				随意收罗的书籍
-			</h2>
-			<ul>
-				<li><Wenyan/> <a href="fengshen/">封神演义【明】许仲林</a>（简）</li>
-				<li><Wenyan/> <a href="shiji/">史記三家注【漢】司馬遷</a></li>
-				<li><Wenyan/> <a href="shishuo/">師說【唐】韓愈</a></li>
-				<li><Wenyan/> <a href="jimengyaojue/">擊蒙要訣【清】李珥；自《栗谷先生全書》</a></li>
-				<li><Wenyan/> <a href="/zhuangzijishi/">莊子集釋【清】郭慶藩（特殊排版）</a></li>
-			</ul>
+            <h2>
+                <div class="icon-badge">
+                    <span class="title-icons icon-book" aria-hidden="true"
+                    ></span>
+                </div>
+                随意收罗的书籍
+            </h2>
+            <ul>
+                <li>
+                    <Wenyan />
+                    <a href="fengshen/">封神演义【明】许仲林</a>（简）
+                </li>
+                <li><Wenyan /> <a href="shiji/">史記三家注【漢】司馬遷</a></li>
+                <li><Wenyan /> <a href="shishuo/">師說【唐】韓愈</a></li>
+                <li>
+                    <Wenyan />
+                    <a href="jimengyaojue/"
+                        >擊蒙要訣【清】李珥；自《栗谷先生全書》</a
+                    >
+                </li>
+                <li>
+                    <Wenyan />
+                    <a href="/zhuangzijishi/"
+                        >莊子集釋【清】郭慶藩（特殊排版）</a
+                    >
+                </li>
+            </ul>
 
-			<hr class="section-divider" />
+            <hr class="section-divider" />
 
-			<h2>
-				<div class="icon-badge">
-					<span class="title-icons icon-friend" aria-hidden="true"></span>
-				</div>
-				友院
-			</h2>
-			<ul>
-				<li><a href="https://vistudium.top/">遠見齋</a> Hulenkius</li>
-			</ul>
+            <h2>
+                <div class="icon-badge">
+                    <span class="title-icons icon-friend" aria-hidden="true"
+                    ></span>
+                </div>
+                友院
+            </h2>
+            <ul>
+                <li><a href="https://vistudium.top/">遠見齋</a> Hulenkius</li>
+            </ul>
 
-			<footer>
-				<hr class="section-divider" />
-				<p class="small">This website is made in Astro. Designed by Yanwenyuan.</p>
-			</footer>
-		</div>
-	</body>
+            <footer>
+                <hr class="section-divider" />
+                <p class="small">
+                    This website is made in Astro. Designed by Yanwenyuan. Cover
+                    art is the <em>Moon Venerable</em>, drawn by <a
+                        href="https://toyhou.se/Dauzito">Dauzito</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
 </html>

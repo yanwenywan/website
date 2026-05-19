@@ -1,7 +1,9 @@
 @use "../colour.scss";
 @use "../font.scss";
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -16,14 +18,39 @@ body {
 
 .hero {
     width: 100%;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to bottom,
         colour.$main,
         75%,
         colour.$bg-standard
-    );
+    ); */
+    position: relative;
     padding: 5rem 1rem 2rem;
     text-align: center;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+    background: linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba(0, 0, 0, 0.45) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.5) brightness(0.75) saturate(1);
+    z-index: -10;
 }
 
 .hero-inner {
@@ -61,7 +88,9 @@ body {
 
 .hero-prose {
     width: 100%;
-    color: colour.$txt-standard;
+    /* color: colour.$txt-standard; */
+    color: colour.$page;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     font-size: 0.95rem;
     line-height: 1.75;
 
