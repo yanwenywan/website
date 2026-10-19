@@ -3,7 +3,7 @@ from pathlib import Path
 def rename_files(folder_path):
     # Get a sorted list of all .md files in the folder
     folder = Path(folder_path)
-    files = sorted([f for f in folder.iterdir() if f.is_file() and f.suffix == '.md' and f.stem[1:].isdigit()])
+    files = sorted([f for f in folder.iterdir() if f.is_file() and f.suffix == '.md' and f.stem[0] == '_' and f.stem[1:].isdigit()])
 
     for file in files:
         old_number = int(file.stem[1:])  # Extract the number from the filename
